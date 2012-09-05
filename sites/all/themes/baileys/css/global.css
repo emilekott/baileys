@@ -13,7 +13,9 @@ a{
     text-decoration: none;
 }
 
-
+ul.menu li {
+    list-style-position: inside;
+}
 
 /*logo*/
 .region-branding-inner{
@@ -37,6 +39,8 @@ a{
     font-weight: bold;
     margin: 0;
     padding: 0 0 0 5px;
+    
+
 }
 
 .region-user-first-inner ul.menu li a{
@@ -47,6 +51,15 @@ a{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    
+        -moz-box-shadow: 3px 3px 5px #888;
+-webkit-box-shadow: 3px 3px 5px #888;
+box-shadow: 3px 3px 5px #888;
+    
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease;
 }
 
 .region-user-first-inner ul.menu li a:hover{
@@ -100,6 +113,11 @@ nav.navigation ul#main-menu li a{
     display: inline-block;
     padding: 12px 53px;
     border-right: 2px solid #f1eee3;
+    
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease;
 }
 
 nav.navigation ul#main-menu li.last a{
@@ -140,6 +158,11 @@ nav.navigation ul#main-menu li.active-trail a{
     font-size: 16px;
     line-height: 16px;
     padding: 10px 0;
+    
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease;
 }
 
 .view-trio-boxes .views-field-field-trio-link a:hover{
@@ -152,6 +175,16 @@ nav.navigation ul#main-menu li.active-trail a{
     display: block;
 }
 
+.view-trio-boxes .views-field-field-trio-image img{
+    transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -o-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.view-trio-boxes .views-field-field-trio-image img:hover{
+    opacity: 0.5;
+}
 
 
 /*main content */
@@ -175,4 +208,31 @@ h1#page-title{
     margin-bottom: 20px;
     font-size: 20px;
     font-weight: 200;
+}
+
+
+/*footer */
+#zone-footer-wrapper{
+    background-color: #424c48;
+}
+
+#zone-footer{
+    color: #fff;
+}
+
+#zone-footer a{
+    color: #fff;
+    text-decoration: none;
+}
+
+#zone-footer a:hover{
+    text-decoration: underline;
+}
+
+#zone-footer ul.menu{
+    margin: 20px 0;
+}
+
+.region-post-footer{
+    text-align: center;
 }
