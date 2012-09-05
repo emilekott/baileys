@@ -1,2 +1,150 @@
-/* This file will hold styles for the mobile version of your website (mobile first). */
-/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+body{
+    background-color: #f1eee3;
+    font-family: "Lato", arial, verdana;
+    color: #505050;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: "Lato", arial, verdana;
+}
+
+
+/*logo*/
+.region-branding-inner{
+    margin: 20px 0;
+}
+
+
+/*header menus */
+.region-user-first-inner{
+    margin: 20px 5px;
+}
+
+.region-user-first-inner ul.menu{
+    float: right;
+}
+
+.region-user-first-inner ul.menu li{
+    float: left;
+    list-style-type: none;
+    list-style-image: none;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 0 0 5px;
+}
+
+.region-user-first-inner ul.menu li a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #afbdb8;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.region-user-first-inner ul.menu li a:hover{
+    background-color: #505050;
+}
+
+/* header contact */
+.block-block-1 {
+    float: right;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.block-block-1 a{
+    color: #505050;
+    text-decoration: none;
+}
+
+.block-block-1 a:hover{
+    text-decoration: underline;
+}
+
+
+
+/*main nav */
+#zone-menu-wrapper{
+    background-color: #afbdb8;
+}
+
+#zone-menu .region-menu{
+    border-left: 2px solid #f1eee3;
+    border-right: 2px solid #f1eee3;
+}
+
+nav.navigation ul#main-menu{
+    margin: 0;
+    padding: 0;
+}
+
+nav.navigation ul#main-menu li{
+    padding: 0;
+    margin: 0;
+}
+
+nav.navigation ul#main-menu li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 16px;
+    display: inline-block;
+    padding: 12px 53px;
+    border-right: 2px solid #f1eee3;
+}
+
+nav.navigation ul#main-menu li.last a{
+    border: none;
+}
+
+nav.navigation ul#main-menu li a:hover,
+nav.navigation ul#main-menu li.active a,
+nav.navigation ul#main-menu li.active-trail a{
+    background-color: #505050;
+}
+
+
+/*content */
+/*hide breadcrumb on homepage */
+.front .breadcrumb{
+    display: none;
+}
+
+
+/*trio boxes */
+.field-collection-view{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.field-collection-container {
+    border:none;
+    margin:0;
+    padding: 0;
+}
+
+.field-name-field-trio-boxes .field-collection-view{
+    float: left;
+    margin: 20px 15px;
+}
+
+
+.field-name-field-trio-link a{
+    color: #fff;
+    text-decoration: none;
+    background: #afbdb8 url('../images/link.png') right center no-repeat;
+    display: block;
+    width: 260px;
+    margin-top: 2px;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 10px;
+}
+
+.field-name-field-trio-link a:hover{
+    background-color: #505050;
+}
