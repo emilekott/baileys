@@ -1,0 +1,121 @@
+<?php
+
+/**
+ * Implementation of hook_block_info().
+ */
+function locator_block_block_info() {
+  $blocks['locator-block'] = array(
+    'info' => t('Locator Block'),
+  );
+  return $blocks;
+}
+ 
+/**
+ * Implementation of hook_block_view().
+ */
+function locator_block_block_view($delta='') {
+  $block = array();
+  switch ($delta) {
+    case 'locator-block':
+      $block['subject'] = '';
+      $block['content'] = drupal_get_form('locator_block_locator_form');
+      break;
+  }
+  return $block;
+}
+ 
+
+
+
+
+function locator_block_locator_form($form, &$form_state){
+  $form['post_code'] = array(
+      '#type' => 'textfield',
+      '#title' => 'Postcode',
+      '#title_display' => 'invisible',
+      '#default_value' => 'POSTCODE',
+      '#size' => 8,
+      '#attributes' => array(
+          'onblur' => "if (this.value == '') {this.value = 'POSTCODE';}",
+          'onfocus' => "if (this.value == 'POSTCODE') {this.value = '';}"    
+      ),
+  );
+  //print_r($form['post_code']);
+  $form['country'] = array(
+      '#type' => 'select',
+      '#title' => 'Country',
+      '#default_value' => 'au',
+      '#title_display' => 'invisible',
+      '#options' => array(
+            'ar' => 'Argentina',
+            'au' => 'Australia',
+            'at' => 'Austria',
+            'be' => 'Belgium',
+            'br' => 'Brazil',
+            'bg' => 'Bulgaria',
+            'ca' => 'Canada',
+            'cl' => 'Chile',
+            'co' => 'Colombia',
+            'hr' => 'Croatia',
+            'cy' => 'Cyprus',
+            'cz' => 'Czech Republic',
+            'dk' => 'Denmark',
+            'ee' => 'Estonia',
+            'fi' => 'Finland',
+            'fr' => 'France',
+            'de' => 'Germany',
+            'gr' => 'Greece',
+            'hk' => 'Hong Kong',
+            'hu' => 'Hungary',
+            'ie' => 'Ireland',
+            'it' => 'Italy',
+            'jp' => 'Japan',
+            'lv' => 'Latvia',
+            'lt' => 'Lithaunia',
+            'my' => 'Malaysia',
+            'mq' => 'Martinique',
+            'mx' => 'Mexico',
+            'nl' => 'Netherlands',
+            'nc' => 'New Caledonia',
+            'nz' => 'New Zealand',
+            'no' => 'Norway',
+            'pe' => 'Peru',
+            'ph' => 'Philippines',
+            'pl' => 'Poland',
+            'pt' => 'Portugal',
+            'ru' => 'Russia',
+            'sg' => 'Singapore',
+            'si' => 'Slovenia',
+            'za' =>'South Africa',
+            'es' => 'Spain',
+            'se' => 'Sweden',
+            'ch' => 'Switzerland',
+            'th' => 'Thailand',
+            'tr' => 'Turkey',
+            'gb' => 'UK',
+            'ua' => 'Ukraine',
+            'us' => 'USA',
+            'vn' => 'Vietnam',
+      ),
+  );
+    
+  $form['submit'] = array(
+      '#type' => 'image_button', 
+      '#src' => base_path() . path_to_theme() . '/images/buttons/go.png',
+      '#submit' => array('submit_postcode'),
+   );
+  
+  return $form;
+}
+
+function submit_postcode(&$form, &$form_state){
+
+    $postcode = $form_state['values']['post_code'];
+    $country = $form_state['values']['country'];
+    drupal_goto('dealer-locator', array('query' => array(
+        'distance' => array(
+            'postal_code' => $postcode,
+            'country' => $country,
+        ),
+    )));
+}

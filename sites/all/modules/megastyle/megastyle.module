@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implements hook_menu_minipanels_styles().
+ */
+function megastyle_menu_minipanels_styles() {
+    $styles = array(
+        'mystyle' => t('My new style'),
+    );
+    return $styles;
+}
+
+/**
+ * Implements hook_menu_minipanels_style().
+ */
+function megastyle_menu_minipanels_style($menu_config) {
+    // Load the custom styles in the footer but after other things have loaded.
+    $image_path = base_path() . path_to_theme() . '/images';
+    drupal_add_js(array('megastyle' => array('image_path' => $image_path)), 'setting');
+    drupal_add_js(drupal_get_path('module', 'megastyle') . '/megastyle.js', array('scope' => 'footer', 'weight' => 100));
+}

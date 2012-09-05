@@ -1,0 +1,5 @@
+name = Mega Style
+description = Custom styles for mega menu
+core = 7.x
+
+project = "Mega Styles"

@@ -1,0 +1,8 @@
+name = Locator Block
+description = Builds the Severne Locator footer block
+core = 7.x
+
+project = "Locator Block"
+dependencies[] = gmap
+dependencies[] = location
+dependencies[] = views
