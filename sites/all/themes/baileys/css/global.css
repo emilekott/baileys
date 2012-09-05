@@ -8,6 +8,12 @@ h1, h2, h3, h4, h5{
     font-family: "Lato", arial, verdana;
 }
 
+a{
+    color: #505050;
+    text-decoration: none;
+}
+
+
 
 /*logo*/
 .region-branding-inner{
@@ -115,36 +121,58 @@ nav.navigation ul#main-menu li.active-trail a{
 
 
 /*trio boxes */
-.field-collection-view{
-    padding: 0;
-    margin: 0;
-    border: none;
-}
-
-.field-collection-container {
-    border:none;
-    margin:0;
-    padding: 0;
-}
-
-.field-name-field-trio-boxes .field-collection-view{
+.view-trio-boxes .views-row{
     float: left;
     margin: 20px 15px;
 }
 
+.view-trio-boxes .views-row-2{
+    margin: 20px 25px;
+}
 
-.field-name-field-trio-link a{
+.view-trio-boxes .views-field-field-trio-link a{
     color: #fff;
     text-decoration: none;
-    background: #afbdb8 url('../images/link.png') right center no-repeat;
+    background-color: #afbdb8;
     display: block;
-    width: 260px;
+    width: 280px;
     margin-top: 2px;
     font-size: 16px;
     line-height: 16px;
-    padding: 10px;
+    padding: 10px 0;
 }
 
-.field-name-field-trio-link a:hover{
+.view-trio-boxes .views-field-field-trio-link a:hover{
     background-color: #505050;
+}
+
+.view-trio-boxes .views-field-field-trio-link a span.trio-link{
+    margin: 0 10px;
+    background: url('../images/link.png') right center no-repeat;
+    display: block;
+}
+
+
+
+/*main content */
+.region-content .region-inner.region-content-inner{
+    padding: 0 15px;
+}
+
+/*page title and subtitle */
+h1#page-title{
+
+    font-size: 30px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+.front h1#page-title{
+        margin-bottom: 0;
+}
+
+.field-name-field-subtitle{
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 200;
 }

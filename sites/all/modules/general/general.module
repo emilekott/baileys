@@ -1,0 +1,13 @@
+<?php
+
+function general_node_view($node, $view_mode, $langcode) {
+    $image_path = base_path() . path_to_theme() . '/images';
+    drupal_add_js(array('general' => array('image_path' => $image_path)), 'setting');
+    if (($node->type == 'home_page')) {
+        $path = libraries_get_path('jquery.cycle');
+        drupal_add_js($path . '/jquery.cycle.all.js');
+        drupal_add_js(drupal_get_path('module', 'node_slideshow') . '/script.js');
+    }
+    
+}
+

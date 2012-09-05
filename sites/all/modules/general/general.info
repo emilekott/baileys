@@ -1,0 +1,6 @@
+name = General
+description = General module to add jquery etc
+core = 7.x
+
+project = "General"
+dependencies[] = libraries

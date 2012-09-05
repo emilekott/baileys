@@ -1,6 +1,0 @@
-name = Node Slideshow
-description = Allows slideshows based on multiple image fields in a node.
-core = 7.x
-
-project = "Node Slideshow"
-dependencies[] = libraries
