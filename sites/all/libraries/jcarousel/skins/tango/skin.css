@@ -11,7 +11,7 @@
 }
 
 .jcarousel-container-horizontal {
-    width: 245px;
+    width: 520px;
     padding: 20px 40px;
 }
 
@@ -26,8 +26,8 @@
 }
 
 .jcarousel-clip-horizontal {
-    width:  245px;
-    height: 75px;
+    width:  520px;
+    height: 80px;
 }
 
 .jcarousel-clip-vertical {
@@ -184,3 +184,5 @@
     cursor: default;
     background-position: 0 -96px;
 }
+
+
