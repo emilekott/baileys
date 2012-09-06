@@ -7,7 +7,7 @@
 Drupal.behaviors.viewsSlideshowJcarouselPager = { 
   attach: function (context) {
     // Process pause on hover.
-    $('.views_slideshow_jcarousel_pager:not(.views-slideshow-jcarousel-pager-processed)', context).addClass('views-slideshow-jcarousel-pager-processed').each(function() {
+    $('.views-slideshow-jcarousel-pager:not(.views-slideshow-jcarousel-pager-processed)', context).addClass('views-slideshow-jcarousel-pager-processed').each(function() {
       // Parse out the unique id from the full id.
       var pagerInfo = $(this).attr('id').split('_');
       var location = pagerInfo[2];
@@ -25,7 +25,7 @@ Drupal.behaviors.viewsSlideshowJcarouselPager = {
         }
       });
 
-      $(this).find('.views_slideshow_jcarousel_pager_item').each(function(index, pagerItem) {
+      $(this).find('.jcarousel-item').each(function(index, pagerItem) {
         $(pagerItem).click(function() {
           Drupal.viewsSlideshow.action({ "action": 'goToSlide', "slideshowID": uniqueID, "slideNum": index });
         });

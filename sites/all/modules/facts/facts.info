@@ -1,0 +1,5 @@
+name = Facts Block
+description = Builds the facts block for property listings
+core = 7.x
+
+project = "Facts"

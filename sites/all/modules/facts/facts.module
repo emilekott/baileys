@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * Implementation of hook_block_info().
+ */
+function facts_block_info() {
+  $blocks['facts-block'] = array(
+    'info' => t('Facts Block'),
+  );
+  return $blocks;
+}
+ 
+/**
+ * Implementation of hook_block_view().
+ */
+function facts_block_view($delta='') {
+  $block = array();
+  switch ($delta) {
+    case 'facts-block':
+      $block['subject'] = 'Facts';
+      $block['content'] = facts_content();
+      break;
+  }
+  return $block;
+}
+ 
+
+
+
+
+function facts_content(){
+    
+    if (arg(0) == 'node' && is_numeric(arg(1))){
+        $nodeid = arg(1);
+        $node = node_load( $nodeid );
+        
+        $html = '<table class="facts-table">';
+        //print_r($node);
+        $price = field_get_items('node', $node, 'field_price');
+        if ($price){
+            $first_price = reset($price);
+            $price_value = $first_price['value'];
+            
+            $price_formatted = '£'.number_format($price_value);
+            $html .= "<tr><th>Price</th><td>$price_formatted</td></tr>";
+        }
+        
+        $price_status = field_get_items('node', $node, 'field_price_status');
+        if ($price_status){
+            $first_price_status = reset($price_status);
+            //print_r($first_price_status);
+            $price_status_value = $first_price_status['taxonomy_term']->name;
+            if ($price_status_value!='Normal') $html .="<tr><td>&nbsp;</td><td>($price_status_value)</td></tr>";
+        }
+        
+        $bedrooms = field_get_items('node', $node, 'field_bedrooms');
+        if ($bedrooms){
+            $first_bedrooms = reset($bedrooms);
+            $bedrooms_value = $first_bedrooms['value'];
+            $html .= "<tr><th>Bedrooms</th><td>$bedrooms_value</td></tr>";
+        }
+        
+        $property_type = field_get_items('node', $node, 'field_property_type');
+        if ($property_type){
+            $first_property_type = reset($property_type);
+            //print_r($first_price_status);
+            $property_type_value = $first_property_type['taxonomy_term']->name;
+            $html .="<tr><th>Property Type</th><td>$property_type_value</td></tr>";
+        }
+        if (isset ($node->locations[0]['city'])){
+            $town = $node->locations[0]['city'];
+            $html .="<tr><th>Location</th><td>$town</td></tr>";
+        }
+    }
+    
+
+    $html .= '</table>';
+    return $html;
+}
