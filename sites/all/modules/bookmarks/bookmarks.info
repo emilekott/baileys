@@ -1,0 +1,5 @@
+name = Bookmarks Block
+description = Builds the bookmarks block for property listings
+core = 7.x
+
+project = "Bookmarks"

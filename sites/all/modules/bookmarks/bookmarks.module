@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Implementation of hook_block_info().
+ */
+function bookmarks_block_info() {
+  $blocks['bookmarks-block'] = array(
+    'info' => t('Bookmarks Block'),
+  );
+  return $blocks;
+}
+ 
+/**
+ * Implementation of hook_block_view().
+ */
+function bookmarks_block_view($delta='') {
+  $block = array();
+  switch ($delta) {
+    case 'bookmarks-block':
+      $block['subject'] = '';
+      $block['content'] = bookmarks_content();
+      break;
+  }
+  return $block;
+}
+ 
+
+
+
+
+function bookmarks_content(){
+    
+    if (arg(0) == 'node' && is_numeric(arg(1))){
+        $nodeid = arg(1); //gonna use this later on
+        $html = '<ul class="bookmarks">';
+        $html .= '<li><a class="bookmark" href="#">Arrange Viewing</a></li>';
+        $html .= '<li><a class="bookmark" href="#">Add to Shortlist</a></li>';
+        $html .= '<li><a class="bookmark" onclick="window.print()" href="#">Print</a></li>';
+        $html .= '<li><a class="bookmark" href="#">Email</a></li>';
+        
+        //facebook
+        //twitter...
+        $html .= '</ul>';
+    }
+    
+
+
+    return $html;
+}
