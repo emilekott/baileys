@@ -31,10 +31,20 @@ function bookmarks_block_view($delta='') {
 function bookmarks_content(){
     
     if (arg(0) == 'node' && is_numeric(arg(1))){
+        global $user;
         $nodeid = arg(1); //gonna use this later on
-        $html = '<ul class="bookmarks">';
+        $node = node_load($nodeid);
+        $flag = flag_get_flag('shortlist');
+        $destination = drupal_get_destination();
+        $login = l(t('login'),'user',array('query' => $destination));
+        $register = l(t('register'),'user/register',array('query' => $destination));
+        
+        $html = 'Property shortlisted by '.$flag->get_count($nodeid).' people. ';
+        if (!$user->uid) $html .= "Please $login or $register to create your shortlist.";
+        $shortlist = flag_create_link('shortlist', $nodeid);
+        $html .= '<ul class="bookmarks">';
         $html .= '<li><a class="bookmark" href="#">Arrange Viewing</a></li>';
-        $html .= '<li><a class="bookmark" href="#">Add to Shortlist</a></li>';
+        $html .= '<li>'.$shortlist.'</li>';
         $html .= '<li><a class="bookmark" onclick="window.print()" href="#">Print</a></li>';
         $html .= '<li><a class="bookmark" href="#">Email</a></li>';
         

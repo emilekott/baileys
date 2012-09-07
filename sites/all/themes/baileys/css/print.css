@@ -1,0 +1,11 @@
+#zone-menu-wrapper{
+    display: none;
+}
+
+.breadcrumb{
+    display:none;
+}
+
+ul.menu{
+    display: none;
+}

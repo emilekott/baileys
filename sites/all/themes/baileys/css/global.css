@@ -17,7 +17,7 @@ ul.menu li {
     list-style-position: inside;
 }
 
-button, input[type="reset"], input[type="submit"], input[type="button"] {
+button, input[type="reset"], input[type="submit"], input[type="button"]{
     -webkit-appearance: none;
     -moz-border-radius: 11px;
     -webkit-border-radius: 11px;
@@ -361,4 +361,35 @@ h1#page-title{
 
 
 
+
+/*property listing*/
+/*bookmarks block */
+ul.bookmarks{
+    float: right;
+}
+
+ul.bookmarks li{
+    float: left;
+    list-style-type: none;
+    margin-left: 10px;
+}
+
+a.bookmark, ul.bookmarks a.flag{
+    color: #fff;
+    text-decoration: none;
+    background-color: #721c10;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease;
+    display:block;
+}
+
+a.bookmark:hover{
+    background-color: #505050;
+}
 
