@@ -94,11 +94,11 @@ button:focus, button:active, input:focus, input:active, select:focus, select:act
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-/*
-    -moz-box-shadow: 3px 3px 5px #888;
-    -webkit-box-shadow: 3px 3px 5px #888;
-    box-shadow: 3px 3px 5px #888;
-*/
+    /*
+        -moz-box-shadow: 3px 3px 5px #888;
+        -webkit-box-shadow: 3px 3px 5px #888;
+        box-shadow: 3px 3px 5px #888;
+    */
     -webkit-transition: background-color 0.4s ease;
     -moz-transition: background-color 0.4s ease;
     -o-transition: background-color 0.4s ease;
@@ -363,9 +363,31 @@ h1#page-title{
 
 
 /*property listing*/
+/*jcarousel*/
+.jcarousel-item img{
+    cursor: pointer;
+    border: 1px solid transparent;
+    -webkit-transition: border-color 1.0s ease;
+    -moz-transition: border-color 1.0s ease;
+    -o-transition: border-color 1.0s ease;
+    transition: border-color 1.0s ease;
+}
+
+.jcarousel-item img:hover{
+    border: 1px solid #505050;
+}
+
+
 /*bookmarks block */
 ul.bookmarks{
     float: right;
+    margin: 0;
+}
+
+#shortlist-details{
+    float:right;
+    font-style: italic;
+    margin-right: 10px;
 }
 
 ul.bookmarks li{
@@ -389,7 +411,21 @@ a.bookmark, ul.bookmarks a.flag{
     display:block;
 }
 
-a.bookmark:hover{
+a.bookmark:hover, ul.bookmarks a.flag:hover{
     background-color: #505050;
 }
 
+
+
+#shortlist-count{
+    background: white;
+    border: 1px solid #505050;
+    margin-left: 6px;
+    height: 14px;
+    line-height: 14px;
+    min-width: 15px;
+    padding: 1px 2px;
+    text-align: center;
+    white-space: nowrap;
+    color: #505050;
+}
