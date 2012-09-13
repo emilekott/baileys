@@ -42,7 +42,7 @@ function facts_content(){
             $price_value = $first_price['value'];
             
             $price_formatted = '£'.number_format($price_value);
-            $html .= "<tr><th>Price</th><td>$price_formatted</td></tr>";
+            $html .= "<tr><th>Price:</th><td>$price_formatted</td></tr>";
         }
         
         $price_status = field_get_items('node', $node, 'field_price_status');
@@ -57,7 +57,7 @@ function facts_content(){
         if ($bedrooms){
             $first_bedrooms = reset($bedrooms);
             $bedrooms_value = $first_bedrooms['value'];
-            $html .= "<tr><th>Bedrooms</th><td>$bedrooms_value</td></tr>";
+            $html .= "<tr><th>Bedrooms:</th><td>$bedrooms_value</td></tr>";
         }
         
         $property_type = field_get_items('node', $node, 'field_property_type');
@@ -65,11 +65,11 @@ function facts_content(){
             $first_property_type = reset($property_type);
             //print_r($first_price_status);
             $property_type_value = $first_property_type['taxonomy_term']->name;
-            $html .="<tr><th>Property Type</th><td>$property_type_value</td></tr>";
+            $html .="<tr><th>Property Type:</th><td>$property_type_value</td></tr>";
         }
         if (isset ($node->locations[0]['city'])){
             $town = $node->locations[0]['city'];
-            $html .="<tr><th>Location</th><td>$town</td></tr>";
+            $html .="<tr><th>Location:</th><td>$town</td></tr>";
         }
     }
     

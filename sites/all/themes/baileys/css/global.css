@@ -8,9 +8,18 @@ h1, h2, h3, h4, h5{
     font-family: "Lato", arial, verdana;
 }
 
-a{
+a:link, a:visited, li a.active{
     color: #505050;
-    text-decoration: none;
+    text-decoration: underline;
+    -webkit-transition: color 0.4s ease;
+    -moz-transition: color 0.4s ease;
+    -o-transition: color 0.4s ease;
+    transition: color 0.4s ease;
+}
+
+a:hover{
+    color: #000;
+    text-decoration: underline;
 }
 
 ul.menu li {
@@ -275,6 +284,10 @@ h1#page-title{
     text-align: center;
 }
 
+#zone-footer-wrapper ul.menu li ul,
+#zone-footer-wrapper ul.menu li li{
+    display:none; /*hide submenu items in footer */
+}
 
 /*content */
 /*hide breadcrumb on homepage */
@@ -356,13 +369,42 @@ h1#page-title{
 }
 
 
+/*main elements*/
+.not-front .region-preface-first .region-inner{
+    padding: 10px 0 10px 15px;
+}
 
+h1#page-title{
+    margin-bottom: 10px;
+}
 
-
+.not-front #zone-preface{
+    margin-bottom: 10px;
+}
 
 
 
 /*property listing*/
+.field-name-field-price, .block-field-status{
+    font-size: 18px;
+    line-height: 18px;
+    
+    float: left;
+    
+}
+
+.field-name-field-price{
+    color: #7c8783;
+    
+}
+
+.block-field-status{
+    margin-right: 5px;
+    color: #721c0f;
+    font-weight: 200;
+}
+
+
 /*jcarousel*/
 .jcarousel-item img{
     cursor: pointer;
@@ -377,8 +419,21 @@ h1#page-title{
     border: 1px solid #505050;
 }
 
+.field-name-field-price-status{
+    display: none;
+}
+
+
 
 /*bookmarks block */
+.region-preface-second .region-inner{
+    margin-right: 15px;
+}
+
+.block-bookmarks{
+    margin-top: 34px;
+}
+
 ul.bookmarks{
     float: right;
     margin: 0;
@@ -388,6 +443,7 @@ ul.bookmarks{
     float:right;
     font-style: italic;
     margin-right: 10px;
+    margin-top: 10px;
 }
 
 ul.bookmarks li{
@@ -428,4 +484,113 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
     text-align: center;
     white-space: nowrap;
     color: #505050;
+}
+
+
+/*sidebar */
+.not-front .region-sidebar-second .region-inner{
+    padding: 0 15px;
+}
+
+.view-floorplans,.block-gmap-location{
+    margin-bottom: 20px;
+}
+
+.field-name-field-epc{
+    float: right;
+    font-size: 14px;
+}
+
+
+/*facts block */
+
+
+.block-facts{
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px 10px;
+}
+
+.block-facts h2.block-title{
+    margin-bottom: 20px;
+}
+
+.block-facts table{
+    border: none;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.block-facts th{
+    font-weight: bold;
+}
+
+.block-facts th, .block-facts td{
+    padding: 0 0 5px 0;
+    color: #505050;
+    border: none;
+    background-color: transparent;
+}
+
+
+/*horizontal tabs */
+.horizontal-tabs{
+    margin-top: 20px !important;
+    border: none !important; 
+    background-color: #fff;
+}
+
+.horizontal-tabs ul.horizontal-tabs-list{
+    background-color: #f1eee3;
+}
+
+.horizontal-tabs ul.horizontal-tabs-list li {
+    background-color: #faf9f4;
+}
+
+.horizontal-tabs ul.horizontal-tabs-list li:hover, .horizontal-tabs ul.horizontal-tabs-list li:focus {
+    background-color: #FFF;
+}
+
+.horizontal-tabs ul.horizontal-tabs-list .selected strong {
+    color: #505050;
+    font-weight: normal;
+}
+
+.horizontal-tabs ul.horizontal-tabs-list strong{
+    color: #abaaa6;
+    font-weight: normal;
+}
+
+.horizontal-tabs fieldset.horizontal-tabs-pane {
+    padding: 20px;
+    border: 0;
+}
+
+.horizontal-tabs ul.horizontal-tabs-list li.selected a:hover{
+    background-color: #FFF;
+}
+
+.horizontal-tabs ul.horizontal-tabs-list li a:hover{
+    background-color: #EEE;
+}
+
+
+/*panes*/
+.field-name-field-overview{
+    width: 310px;
+    float: left;
+    margin-right: 30px;
+}
+
+.field-name-field-property-type, .field-name-field-bedrooms, .field-name-field-features{
+    margin-bottom: 20px;
+}
+
+
+/*disclaimer */
+.block-3{
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
 }
