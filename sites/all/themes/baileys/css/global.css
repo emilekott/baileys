@@ -185,6 +185,10 @@ nav.navigation ul#main-menu li.active-trail a{
 
 
 /*trio boxes */
+.view-trio-boxes{
+    display: none;
+}
+
 .view-trio-boxes .views-row{
     float: left;
     margin: 20px 15px;
@@ -493,7 +497,7 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 }
 
 .view-floorplans,.block-gmap-location{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .field-name-field-epc{
@@ -507,7 +511,7 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 
 .block-facts{
     background-color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding: 20px 10px;
 }
 
