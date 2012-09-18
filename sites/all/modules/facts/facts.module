@@ -7,6 +7,10 @@ function facts_block_info() {
   $blocks['facts-block'] = array(
     'info' => t('Facts Block'),
   );
+  $blocks['prop-title'] = array(
+    'info' => t("Property Title"),  
+  );
+  
   return $blocks;
 }
  
@@ -20,6 +24,10 @@ function facts_block_view($delta='') {
       $block['subject'] = 'Facts';
       $block['content'] = facts_content();
       break;
+    case 'prop-title':
+        $block['subject'] ='';
+        $block['content'] =prop_title();
+        break;
   }
   return $block;
 }
@@ -40,18 +48,20 @@ function facts_content(){
         if ($price){
             $first_price = reset($price);
             $price_value = $first_price['value'];
-            
+            $suffix =($node->type == 'property_let' ? '(PCM)' : '');
             $price_formatted = '£'.number_format($price_value);
-            $html .= "<tr><th>Price:</th><td>$price_formatted</td></tr>";
+            $html .= "<tr><th>Price:</th><td>$price_formatted $suffix</td></tr>";
         }
         
         $price_status = field_get_items('node', $node, 'field_price_status');
         if ($price_status){
+
             $first_price_status = reset($price_status);
             //print_r($first_price_status);
             $price_status_value = $first_price_status['taxonomy_term']->name;
             if ($price_status_value!='Normal') $html .="<tr><td>&nbsp;</td><td>($price_status_value)</td></tr>";
         }
+        
         
         $bedrooms = field_get_items('node', $node, 'field_bedrooms');
         if ($bedrooms){
@@ -63,17 +73,41 @@ function facts_content(){
         $property_type = field_get_items('node', $node, 'field_property_type');
         if ($property_type){
             $first_property_type = reset($property_type);
-            //print_r($first_price_status);
             $property_type_value = $first_property_type['taxonomy_term']->name;
             $html .="<tr><th>Property Type:</th><td>$property_type_value</td></tr>";
         }
-        if (isset ($node->locations[0]['city'])){
+        /*if (isset ($node->locations[0]['city'])){
             $town = $node->locations[0]['city'];
             $html .="<tr><th>Location:</th><td>$town</td></tr>";
+        }*/
+        $town = field_get_items('node', $node, 'field_town');
+        if ($town){
+            
+            $first_town = reset($town);
+            $town_value = $first_town['taxonomy_term']->name;
+            $html .="<tr><th>Location:</th><td>$town_value</td></tr>";
         }
+        
     }
     
 
     $html .= '</table>';
     return $html;
+}
+
+function prop_title(){
+    if (arg(0) == 'node' && is_numeric(arg(1))){
+        $nodeid = arg(1);
+        $node = node_load( $nodeid );
+        $title = $node->title;
+        $town = field_get_items('node', $node, 'field_town');
+        if ($town){
+            
+            $first_town = reset($town);
+            $town_value = $first_town['taxonomy_term']->name;
+            $title .=", $town_value";
+        }
+        $title = '<h1 id="page-title" class="title">'.$title.'</h1>';
+        return $title;
+    }
 }

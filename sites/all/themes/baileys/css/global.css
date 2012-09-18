@@ -389,7 +389,7 @@ h1#page-title{
 
 
 /*property listing*/
-.field-name-field-price, .block-field-status{
+.field-name-field-price, .block-field-status, .block-field-let-status{
     font-size: 18px;
     line-height: 18px;
     
@@ -402,7 +402,8 @@ h1#page-title{
     
 }
 
-.block-field-status{
+.block-field-status,
+.block-field-let-status{
     margin-right: 5px;
     color: #721c0f;
     font-weight: 200;
@@ -423,7 +424,7 @@ h1#page-title{
     border: 1px solid #505050;
 }
 
-.field-name-field-price-status{
+.field-name-field-price-status, .field-name-field-town{
     display: none;
 }
 
@@ -509,27 +510,27 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 /*facts block */
 
 
-.block-facts{
+.block-facts-facts-block{
     background-color: #fff;
     margin-bottom: 30px;
     padding: 20px 10px;
 }
 
-.block-facts h2.block-title{
+.block-facts-facts-block h2.block-title{
     margin-bottom: 20px;
 }
 
-.block-facts table{
+.block-facts-facts-block table{
     border: none;
     margin-bottom: 0;
     font-size: 14px;
 }
 
-.block-facts th{
+.block-facts-facts-block th{
     font-weight: bold;
 }
 
-.block-facts th, .block-facts td{
+.block-facts-facts-block th, .block-facts-facts-block td{
     padding: 0 0 5px 0;
     color: #505050;
     border: none;
