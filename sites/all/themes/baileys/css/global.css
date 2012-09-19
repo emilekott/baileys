@@ -22,7 +22,7 @@ a:hover{
     text-decoration: underline;
 }
 
-ul.menu li {
+ul, ul.menu li {
     list-style-position: inside;
 }
 
@@ -66,6 +66,94 @@ button:focus, button:active, input:focus, input:active, select:focus, select:act
     -webkit-box-shadow: #AFBDB8 0 0 7px;
     box-shadow: #AFBDB8 0 0 7px;
     z-index: 1;
+}
+
+
+/*text fields*/
+
+textarea, input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
+    -webkit-appearance: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    background-color: #dddbd1;
+    border: none;
+
+    color: #505050;
+    outline: 0;
+    padding: 2px 5px;
+    font-size: 15px;
+    font-family: "Lato", arial, verdana;
+    height: 38px;
+}
+
+.not-front select{
+     -webkit-appearance: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    background-color: #dddbd1;
+    border: none;
+
+    color: #505050;
+    outline: 0;
+    padding: 2px 5px;
+    font-size: 15px;
+    font-family: "Lato", arial, verdana;
+    height: 38px;
+    width: 455px;
+}
+
+textarea{
+    height: 210px;
+}
+
+label{
+    font-weight: 200;
+    color: #7c8783;
+    font-size: 20px
+
+}
+
+
+.form-item input.error, .form-item textarea.error, .form-item select.error{
+    border: 1px solid #d0230b;
+}
+
+.marker, .form-required {
+    color: #d0230b;
+}
+
+
+/*errors */
+div.error{
+    color: #d0230b;
+    border-color: #d0230b;
+    margin: 0 15px 15px 15px;
+}
+
+div.messages{
+    margin: 0 15px 15px 15px;
+    border: 1px solid #054b36;
+    color: #054b36;
+    
+}
+
+div.messages p{
+    margin-bottom: 5px;
+    
 }
 
 
@@ -325,7 +413,8 @@ h1#page-title{
 .block-locator-block-locator-block .form-item-location input{
     border: none;
     background: transparent;
-    margin: 8px;
+    margin: 0 5px;
+    font-size: 13px;
 
 }
 
@@ -392,14 +481,14 @@ h1#page-title{
 .field-name-field-price, .block-field-status, .block-field-let-status{
     font-size: 18px;
     line-height: 18px;
-    
+
     float: left;
-    
+
 }
 
 .field-name-field-price{
     color: #7c8783;
-    
+
 }
 
 .block-field-status,
@@ -598,4 +687,75 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
     background-color: #fff;
     padding: 15px;
     margin-bottom: 15px;
+}
+
+
+
+/*contact form*/
+
+.node-type-webform input.form-text, .node-type-webform input.email{
+    width: 455px;
+} 
+
+
+/*specific*/
+#node-webform-56 #webform-component-first-name,
+#node-webform-56 #webform-component-email-address{
+    float:left;
+    margin-top:0;
+}
+
+#node-webform-56 #webform-component-last-name,
+#node-webform-56 #webform-component-telephone-number{
+    float:right;
+    margin-top:0;
+}
+
+
+
+/*arrange viewing */
+
+#webform-component-property{
+    display: none;
+}
+
+#node-webform-57 input.form-text, #node-webform-57 input.email{
+    width: 240px;
+}
+
+.webform-datepicker select{
+    width: 69px;
+}
+
+#webform-component-preferred-time select{
+    width: 69px;
+}
+/*
+#node-webform-57 #webform-component-first-name,
+
+#node-webform-57 #webform-component-email-address{
+    float:left;
+    margin-top:0;
+}
+
+#node-webform-57 #webform-component-last-name,
+#node-webform-57 #webform-component-preferred-date{
+    float: right;
+    margin-top:0;
+    clear: left;
+}
+
+#node-webform-57 #webform-component-preferred-time{
+    float: left;
+    margin-top: 0;
+    
+}
+*/
+#cboxLoadedContent .container-24, #cboxLoadedContent .grid-24, #cboxLoadedContent .grid-7{
+    width: 260px;
+    margin: 0! important;
+}
+
+#cboxLoadedContent .tabs, #cboxLoadedContent #messages{
+    display: none;
 }

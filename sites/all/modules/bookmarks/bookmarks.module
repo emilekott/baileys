@@ -43,7 +43,8 @@ function bookmarks_content(){
         
         $shortlist = flag_create_link('shortlist', $nodeid);
         $html .= '<ul class="bookmarks">';
-        $html .= '<li><a class="bookmark" href="#">Arrange Viewing</a></li>';
+        $viewing = l(t('Arrange Viewing'), 'arrange-viewing', array('query' => array('prop' => $nodeid, 'destination' => 'node/'.$nodeid, 'iframe'=>'true'), 'attributes'=>array('class' => 'bookmark colorbox') ));
+        $html .= "<li>$viewing</li>";
         $html .= '<li>'.$shortlist.'</li>';
         $html .= '<li><a class="bookmark" onclick="window.print()" href="#">Print</a></li>';
         $html .= '<li><a class="bookmark" href="#">Email</a></li>';
