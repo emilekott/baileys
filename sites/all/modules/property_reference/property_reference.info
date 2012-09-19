@@ -1,0 +1,5 @@
+name = Property Reference
+description = Loads a reference to a property form a url arg
+core = 7.x
+
+project = "Property Reference"

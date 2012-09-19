@@ -43,11 +43,12 @@ function bookmarks_content(){
         
         $shortlist = flag_create_link('shortlist', $nodeid);
         $html .= '<ul class="bookmarks">';
-        $viewing = l(t('Arrange Viewing'), 'arrange-viewing', array('query' => array('prop' => $nodeid, 'destination' => 'node/'.$nodeid, 'iframe'=>'true'), 'attributes'=>array('class' => 'bookmark colorbox') ));
+        $viewing = l(t('Arrange Viewing'), 'arrange-viewing', array('query' => array('prop' => $nodeid, 'destination' => 'node/'.$nodeid), 'attributes'=>array('class' => 'bookmark') ));
         $html .= "<li>$viewing</li>";
         $html .= '<li>'.$shortlist.'</li>';
         $html .= '<li><a class="bookmark" onclick="window.print()" href="#">Print</a></li>';
-        $html .= '<li><a class="bookmark" href="#">Email</a></li>';
+        $email = l(t('Email'), 'email-details-property', array('query' => array('prop' => $nodeid, 'destination' => 'node/'.$nodeid), 'attributes'=>array('class' => 'bookmark') ));
+        $html .= "<li>$email</li>";
         $html .= '</ul>';
         if (!$user->uid) {
             $html .= '<div id="shortlist-details">Please '.$login.' or '.$register.' to create your shortlist.</div>';

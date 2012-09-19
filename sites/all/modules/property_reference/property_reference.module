@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * Implementation of hook_block_info().
+ */
+function property_reference_block_info() {
+  $blocks['ref-block'] = array(
+    'info' => t('Property Reference Block'),
+  );
+  
+  
+  return $blocks;
+}
+ 
+/**
+ * Implementation of hook_block_view().
+ */
+function property_reference_block_view($delta='') {
+  $block = array();
+  switch ($delta) {
+    case 'ref-block':
+      $block['subject'] = '';
+      $block['content'] = ref_content();
+      break;
+  }
+  return $block;
+}
+ 
+
+
+
+
+function ref_content(){
+    $prop = "";
+    if (isset($_GET['prop'])) $prop = $_GET['prop'];
+    
+        if ($prop) {
+            $property = node_load($prop);
+            $prop_link = l(t('Return to Property Page'), 'node/'.$prop);
+            $prop_title = "Property: $property->title (ID: $prop)<br />$prop_link";
+            return $prop_title;
+            
+        }
+   
+}
+

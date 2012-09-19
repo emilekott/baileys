@@ -94,7 +94,7 @@ textarea, input[type="date"], input[type="datetime"], input[type="datetime-local
 }
 
 .not-front select{
-     -webkit-appearance: none;
+    -webkit-appearance: none;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -148,12 +148,54 @@ div.messages{
     margin: 0 15px 15px 15px;
     border: 1px solid #054b36;
     color: #054b36;
-    
+
 }
 
 div.messages p{
     margin-bottom: 5px;
-    
+
+}
+
+/*tabs*/
+ul.primary {
+    border:none;
+    height: auto;
+    line-height: normal;
+    list-style: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+ul.primary li a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #afbdb8;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    /*
+        -moz-box-shadow: 3px 3px 5px #888;
+        -webkit-box-shadow: 3px 3px 5px #888;
+        box-shadow: 3px 3px 5px #888;
+    */
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease;
+    border: none;
+}
+
+ul.primary li.active a {
+    background-color:#505050;
+    border:none;
+
+}
+
+ul.primary li a:hover {
+    background-color: #505050;
+    border: none;
 }
 
 
@@ -714,48 +756,59 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 
 
 /*arrange viewing */
-
-#webform-component-property{
-    display: none;
+.block-property-reference{
+    font-size: 16px;
 }
 
-#node-webform-57 input.form-text, #node-webform-57 input.email{
-    width: 240px;
+
+#webform-component-property{
 }
 
 .webform-datepicker select{
-    width: 69px;
+    width: 100px;
+    margin-right: 2px;
 }
 
 #webform-component-preferred-time select{
-    width: 69px;
+    width: 100px;
+    margin-right: 5px;
 }
-/*
-#node-webform-57 #webform-component-first-name,
 
+
+#node-webform-57 #webform-component-first-name,
 #node-webform-57 #webform-component-email-address{
     float:left;
     margin-top:0;
 }
 
 #node-webform-57 #webform-component-last-name,
-#node-webform-57 #webform-component-preferred-date{
+#node-webform-57 #webform-component-telephone-number{
+    float:right;
+    margin-top:0;
+}
+
+#webform-component-preferred-date{
+    width: 455px;
+    float:left;
+    margin-top:0;
+}
+
+#webform-component-preferred-time{
+    width: 455px;
     float: right;
     margin-top:0;
-    clear: left;
 }
 
-#node-webform-57 #webform-component-preferred-time{
-    float: left;
-    margin-top: 0;
-    
-}
-*/
-#cboxLoadedContent .container-24, #cboxLoadedContent .grid-24, #cboxLoadedContent .grid-7{
-    width: 260px;
-    margin: 0! important;
+
+/*send email*/
+#node-webform-58 #webform-component-recipient-name,
+#node-webform-58 #webform-component-your-name{
+    float:left;
+    margin-top:0;
 }
 
-#cboxLoadedContent .tabs, #cboxLoadedContent #messages{
-    display: none;
+#node-webform-58 #webform-component-recipient-email,
+#node-webform-58 #webform-component-your-email-address{
+    float:right;
+    margin-top:0;
 }
