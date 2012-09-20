@@ -107,4 +107,25 @@ Drupal.Views.getPath = function (href) {
   return href;
 };
 
+/**
+ * Helper function updates window.location.hash data from a javascript object.
+ *
+ * We provide for multiple arbitrary values to be stored in the hash by using a urlencoded string
+ */
+Drupal.Views.updateLocationHash = function (data) {
+  hash = Drupal.Views.getLocationHash();
+  $.extend(hash, data);
+  window.location.hash = decodeURIComponent($.param(hash));
+}
+
+Drupal.Views.getLocationHash = function () {
+  hashStr = window.location.hash.substr(1); // Strips the # itself
+  return Drupal.Views.parseQueryString(hashStr);
+}
+
+//This is provided in jQuery 1.7, but we're not there yet.
+Drupal.Views.isNumeric = function (n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 })(jQuery);
