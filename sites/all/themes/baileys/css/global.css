@@ -4,9 +4,20 @@ body{
     color: #505050;
 }
 
-h1, h2, h3, h4, h5{
+h1, h2, h3, h4, h5, h6{
     font-family: "Lato", arial, verdana;
 }
+
+h2, h3, h4, h5, h6 {
+    font-weight: 200;
+    color: #7c8783;
+    margin-bottom: 15px;
+}
+h3{font-size: 25px;}
+h4{font-size: 21px;}
+h5{font-size: 19px;}
+h6{font-size: 17px;}
+
 
 a:link, a:visited, li a.active{
     color: #505050;
@@ -22,7 +33,7 @@ a:hover{
     text-decoration: underline;
 }
 
-ul, ul.menu li {
+ul, ul.menu li, ol {
     list-style-position: inside;
 }
 
@@ -157,9 +168,15 @@ div.messages p{
 }
 
 /*tabs*/
-.tabs{
-    margin: 10px 0;
+.front #tabs{
+    margin: 0 15px 10px 15px;
 }
+
+#tabs{
+    margin: 10px 0 0 0;
+}
+
+
 
 
 ul.primary {
@@ -810,4 +827,27 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 #node-webform-58 #webform-component-your-email-address{
     float:right;
     margin-top:0;
+}
+
+
+
+/*Basic page */
+.node-type-page h1#page-title, .node-type-page .field-name-field-subtitle{
+    margin-bottom: 0;
+}
+
+.node-type-page #region-preface-first{
+    margin-bottom: 10px;
+}
+
+.node-type-page .region-preface-first .region-inner{
+    padding: 10px 0 0 15px;
+}
+
+.node-type-page .field-name-body img[style*="left"]{
+    margin: 5px 10px 5px 0;
+}
+
+.node-type-page .field-name-body img[style*="right"]{
+    margin: 5px 0 5px 10px;
 }
