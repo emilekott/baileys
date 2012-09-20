@@ -865,3 +865,36 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 .node-type-page .view-trio-boxes .views-row-3{
     margin: 20px 0 20px 15px;
 }
+
+
+/*property search views */
+.region-sidebar-first .region-inner{
+    padding: 0 15px;
+}
+
+.views-exposed-form{
+    background-color: #fff;
+    padding: 10px;
+}
+
+.views-exposed-form select, .views-exposed-form input[type=text]{
+    width: 220px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #cbcbcb;
+}
+
+.views-exposed-form label{
+    font-weight: 200;
+    color: #7c8783;
+    font-size: 20px;
+}
+
+.views-exposed-form .form-item label{
+    font-size: 14px;
+    color: #505050;
+}
+
+.views-exposed-form input[type=checkbox]{
+    margin-left: 3px;
+}
