@@ -922,3 +922,13 @@ input#edit-field-price-value-min, input#edit-field-bedrooms-value-min{
 .form-item-distance-search-distance, .form-item-distance-search-units{
     display:none;
 }
+
+
+/*results...*/
+.view-property-search table{
+    border: none;
+}
+
+.view-property-search td, .view-property-search th{
+    padding: 0;
+}
