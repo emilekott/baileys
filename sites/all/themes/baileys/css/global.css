@@ -875,6 +875,11 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 .views-exposed-form{
     background-color: #fff;
     padding: 10px;
+    margin-bottom: 10px;
+}
+
+.views-exposed-widget{
+    margin: 5px 0;
 }
 
 .views-exposed-form select, .views-exposed-form input[type=text]{
@@ -897,4 +902,23 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 
 .views-exposed-form input[type=checkbox]{
     margin-left: 3px;
+}
+
+
+.webform-container-inline div.exposed-field-wrapper {
+  display: inline-block;
+}
+
+
+
+.webform-container-inline div.exposed-field-wrapper input{
+    width: 105px;
+}
+
+input#edit-field-price-value-min, input#edit-field-bedrooms-value-min{
+    margin-right: 10px;
+}
+
+.form-item-distance-search-distance, .form-item-distance-search-units{
+    display:none;
 }

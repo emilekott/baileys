@@ -1,0 +1,8 @@
+name = Sliders
+description = Adds jQuery UI sliders to property search views
+core = 7.x
+
+project = "Sliders"
+dependencies[] = views
+dependencies[] = jquery_update
+dependencies[] = better_exposed_filters

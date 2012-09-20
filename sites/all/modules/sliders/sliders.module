@@ -1,0 +1,37 @@
+<?php
+
+function sliders_views_pre_render(&$view)
+{
+    if($view->name == 'property_search' && $view->editing == FALSE)
+    {
+        //these need to be loaded on power-slider view page
+       //    drupal_add_js(drupal_get_path('module', 'sliders') . '/sliders.js');
+    }
+}
+
+function sliders_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'views_exposed_form'){
+      $form['field_price_value']['min']['#title'] = "£ min";
+      $form['field_price_value']['min']['#prefix'] = '<div class="webform-container-inline"><div class="exposed-field-wrapper">';
+      $form['field_price_value']['min']['#suffix'] = '</div>';
+      $form['field_price_value']['max']['#title'] = "£ max";
+      $form['field_price_value']['max']['#prefix'] = '<div class="exposed-field-wrapper">';
+      $form['field_price_value']['max']['#suffix'] = '</div>';
+      
+      $form['field_bedrooms_value']['min']['#title'] = "Min";
+      $form['field_bedrooms_value']['min']['#prefix'] = '<div class="webform-container-inline"><div class="exposed-field-wrapper">';
+      $form['field_bedrooms_value']['min']['#suffix'] = '</div>';
+      $form['field_bedrooms_value']['max']['#title'] = "Max";
+      $form['field_bedrooms_value']['max']['#prefix'] = '<div class="exposed-field-wrapper">';
+      $form['field_bedrooms_value']['max']['#suffix'] = '</div>';
+      
+      
+      $form['sort_bef_combine']['#options']['created ASC'] = 'Date (Oldest First)';
+      $form['sort_bef_combine']['#options']['created DESC'] = 'Date (Newest First)';
+      
+      $form['sort_bef_combine']['#options']['field_price_value ASC'] = 'Cheapest First';
+      $form['sort_bef_combine']['#options']['field_price_value DESC'] = 'Most Expensive First';
+      
+      $form['distance']['postal_code']['#title'] = 'Post Code';
+  }
+}
