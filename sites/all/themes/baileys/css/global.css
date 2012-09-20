@@ -33,6 +33,18 @@ a:hover{
     text-decoration: underline;
 }
 
+a img{
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -o-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+a img:hover{
+    opacity: 0.5;
+}
+
+
 ul, ul.menu li, ol {
     list-style-position: inside;
 }
@@ -930,5 +942,37 @@ input#edit-field-price-value-min, input#edit-field-bedrooms-value-min{
 }
 
 .view-property-search td, .view-property-search th{
-    padding: 0;
+    padding: 0 20px 20px 0;
+    text-align: center;
+    
+}
+
+.view-property-search .field-wrapper{
+    background-color: #fff;
+    padding: 10px;
+}
+
+.view-property-search .views-field-title a{
+    font-weight: 200;
+    color: #7C8783;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.view-property-search .views-field-field-town{
+    font-weight: 200;
+    color: #505050;
+    font-size: 18px;
+}
+
+.view-property-search .views-field-field-bedrooms{
+    font-weight: 200;
+    color: #505050;
+    font-size: 14px;
+}
+
+.view-property-search .views-field-field-price{
+    font-weight: 200;
+    color: #7C8783;
+    font-size: 20px;
 }
