@@ -26,11 +26,11 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
       $form['field_bedrooms_value']['max']['#suffix'] = '</div>';
       
       
-      $form['sort_bef_combine']['#options']['created ASC'] = 'Date (Oldest First)';
-      $form['sort_bef_combine']['#options']['created DESC'] = 'Date (Newest First)';
+      $form['sort_bef_combine']['#options']['created ASC'] = 'Sort: Date (Oldest First)';
+      $form['sort_bef_combine']['#options']['created DESC'] = 'Sort: Date (Newest First)';
       
-      $form['sort_bef_combine']['#options']['field_price_value ASC'] = 'Price (Low-High)';
-      $form['sort_bef_combine']['#options']['field_price_value DESC'] = 'Price (High-Low)';
+      $form['sort_bef_combine']['#options']['field_price_value ASC'] = 'Sort: Price (Low-High)';
+      $form['sort_bef_combine']['#options']['field_price_value DESC'] = 'Sort: Price (High-Low)';
       
       $form['distance']['postal_code']['#title'] = 'Post Code';
       
@@ -38,7 +38,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
       $form['new_submit'] = array(
         '#type' => 'submit',
         '#value' => 'Search',
-          '#weight' => 100,
+          '#weight' => '-3000',
       );
       
      
@@ -46,6 +46,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
       $form['new_reset'] = array(
           '#type' => 'submit',
           '#value' => 'Reset',
+          '#weight' => '-2000',
           '#submit' => array('reset_property_search'),
       );
       
