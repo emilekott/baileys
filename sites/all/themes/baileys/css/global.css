@@ -957,6 +957,7 @@ input#edit-field-price-value-min, input#edit-field-bedrooms-value-min{
     padding: 10px;
 }
 
+
 .view-property-search .views-field-title a{
     font-weight: 200;
     color: #7C8783;
@@ -984,6 +985,11 @@ input#edit-field-price-value-min, input#edit-field-bedrooms-value-min{
 
 .view-property-search table{
     margin-bottom: 0;
+}
+
+.view-property-search tr.row-1.row-first.row-last .field-wrapper{
+    width: 180px;
+    height: 228px;
 }
 
 /*pager */
