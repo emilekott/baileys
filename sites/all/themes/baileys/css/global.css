@@ -935,6 +935,11 @@ input#edit-field-price-value-min, input#edit-field-bedrooms-value-min{
     display:none;
 }
 
+.views-submit-button input{
+    float: right;
+    margin-left: 5px;
+}
+
 
 /*results...*/
 .view-property-search table{
@@ -1055,7 +1060,7 @@ input#edit-field-price-value-min, input#edit-field-bedrooms-value-min{
 
 
 /*View Display Mennu */
-ul.display-menu {
+ul#view-modes {
     border:none;
     height: auto;
     line-height: normal;
@@ -1067,12 +1072,12 @@ ul.display-menu {
     margin-bottom: 10px;
 }
 
-ul.display-menu li{
+ul#view-modes li{
     display: inline;
     margin-left: 5px;
 }
 
-ul.display-menu li a {
+ul#view-modes li a {
     color: #fff;
     text-decoration: none;
     background-color: #afbdb8;
@@ -1093,17 +1098,17 @@ ul.display-menu li a {
     display:inline-block
 }
 
-ul.display-menu li a.active {
-    background-color:#505050;
-    border:none;
+ul#view-modes li.default{
+    display: none;
 }
 
-ul.display-menu li a:hover {
+ul#view-modes li a.views-modes-active{
     background-color: #505050;
     border: none;
 }
 
-/*hide map to start */
-.view-property-search .attachment{
-    /*display: none;*/
+ul#view-modes li a:hover {
+    background-color: #505050;
+    border: none;
 }
+
