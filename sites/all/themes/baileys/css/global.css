@@ -976,3 +976,134 @@ input#edit-field-price-value-min, input#edit-field-bedrooms-value-min{
     color: #7C8783;
     font-size: 20px;
 }
+
+.view-property-search table{
+    margin-bottom: 0;
+}
+
+/*pager */
+.view-property-search .item-list{
+    margin-bottom: 20px;
+}
+
+.pager {
+    background: transparent;
+    border: none;
+    
+}
+
+.pager li {
+    border: none;
+    color: #fff;
+    font: bold 12px/1.2 Arial, sans-serif;
+    outline: 0;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 5px !important ;
+}
+
+.pager li.pager-next {
+    border: none;
+    border-color: #DDD #BBB #999;
+    right: 60px;
+}
+
+.pager li.pager-last, .pager li.pager-last a, .pager li.pager-last a:hover {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.pager li.first, .pager li.first a, .pager li.first a:hover {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.pager li.pager-previous a{
+    width: 90px;
+}
+
+.pager li a {
+     color: #fff;
+    text-decoration: none;
+    background: #afbdb8;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease;
+    border: none;
+}
+
+
+.pager li a:hover {
+    background: #505050;
+    color: #fff;
+}
+
+.pager li.pager-current {
+    background: #505050;
+    color: #fff;
+     -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+/*View Display Mennu */
+ul.display-menu {
+    border:none;
+    height: auto;
+    line-height: normal;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    float: right;
+    margin-bottom: 10px;
+}
+
+ul.display-menu li{
+    display: inline;
+    margin-left: 5px;
+}
+
+ul.display-menu li a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #afbdb8;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    /*
+        -moz-box-shadow: 3px 3px 5px #888;
+        -webkit-box-shadow: 3px 3px 5px #888;
+        box-shadow: 3px 3px 5px #888;
+    */
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease;
+    border: none;
+    display:inline-block
+}
+
+ul.display-menu li a.active {
+    background-color:#505050;
+    border:none;
+}
+
+ul.display-menu li a:hover {
+    background-color: #505050;
+    border: none;
+}
+
+/*hide map to start */
+.view-property-search .attachment{
+    /*display: none;*/
+}

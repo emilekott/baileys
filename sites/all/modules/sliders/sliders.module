@@ -5,7 +5,7 @@ function sliders_views_pre_render(&$view)
     if($view->name == 'property_search' && $view->editing == FALSE)
     {
         //these need to be loaded on power-slider view page
-       //    drupal_add_js(drupal_get_path('module', 'sliders') . '/sliders.js');
+        //drupal_add_js(drupal_get_path('module', 'sliders') . '/sliders.js');
     }
 }
 
