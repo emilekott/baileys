@@ -1158,6 +1158,10 @@ ul#view-modes li a:hover {
     width: 390px;
 }
 
+#views_slideshow_controls_text_featured_properties_sale-block{
+    position: relative;
+}
+
 #views_slideshow_controls_text_previous_featured_properties_sale-block{
     background: url('../images/prev-horizontal.png') no-repeat;
     width: 32px;
