@@ -95,8 +95,8 @@ function purl_menu() {
  */
 function purl_form_alter(&$form, &$form_state, $form_id) {
   switch ($form_id) {
-    case 'menu_edit_menu':
-    case 'menu_edit_item':
+    //case 'menu_edit_menu':
+    //case 'menu_edit_item':
     case 'redirect_edit_form':
       module_load_include('inc', 'purl', 'purl.admin');
       _purl_form_alter($form, $form_state, $form_id);

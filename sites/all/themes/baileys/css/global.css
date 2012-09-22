@@ -921,7 +921,16 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
     display: inline-block;
 }
 
+#edit-sort-bef-combine{
+    position: absolute;
+    top: 0;
+    left: 280px;
+    width: 200px;
+    z-index:10;
+}
 
+#edit-new-reset{
+}
 
 .webform-container-inline div.exposed-field-wrapper input{
     width: 105px;
