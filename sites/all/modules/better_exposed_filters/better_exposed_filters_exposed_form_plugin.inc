@@ -239,9 +239,6 @@ class better_exposed_filters_exposed_form_plugin extends views_plugin_exposed_fo
         if ($this->options['bef']['sort']['reset']) {
           $options[' '] = t($this->options['bef']['sort']['reset_label']);
         }
-        else {
-          $form['sort_bef_combine']['#default_value'] = '';
-        }
 
         $selected = '';
         foreach ($form['sort_by']['#options'] as $by_key => $by_val) {
@@ -251,11 +248,11 @@ class better_exposed_filters_exposed_form_plugin extends views_plugin_exposed_fo
           }
         }
 
-        $form['sort_bef_combine'] = array(
-          '#type' => 'radios',
-          '#options' => $options,
-          '#title' => $form['sort_by']['#title'],   // Already sanitized by Views
-        );
+        // Set options for sort_bef_combine
+        $form['sort_bef_combine']['#options'] = $options;
+        // Select first sort_bef_combine option by default
+        reset($options);
+        $form['sort_bef_combine']['#default_value'] = key($options);
 
         // Handle display-specific details
         switch ($this->options['bef']['sort']['bef_format']) {
