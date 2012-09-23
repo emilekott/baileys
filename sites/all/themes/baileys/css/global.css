@@ -954,6 +954,16 @@ input#edit-field-price-value-min, input#edit-field-bedrooms-value-min{
     display: none;
 }
 
+/*update buttons */
+#edit-update-budget-wrapper,
+#edit-update-town-wrapper,
+#edit-update-bedrooms-wrapper,
+#edit-update-features-wrapper{
+    display: none;
+}
+
+
+
 
 /*results...*/
 .view-property-search table{

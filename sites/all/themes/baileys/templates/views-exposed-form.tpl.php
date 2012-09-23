@@ -27,14 +27,7 @@
 <?php endif; ?>
 <div class="views-exposed-form">
     <div class="views-exposed-widgets clearfix">
-        <div class="views-exposed-widget views-submit-button">
-            <?php print $button; ?>
-        </div>
-        <?php if (!empty($reset_button)): ?>
-            <div class="views-exposed-widget views-reset-button">
-                <?php print $reset_button; ?>
-            </div>
-        <?php endif; ?>
+        
         <?php foreach ($widgets as $id => $widget): ?>
             <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget views-widget-<?php print $id; ?>">
                 <?php if (!empty($widget->label)): ?>
@@ -73,6 +66,14 @@
         <?php if (!empty($offset)): ?>
             <div class="views-exposed-widget views-widget-offset">
                 <?php print $offset; ?>
+            </div>
+        <?php endif; ?>
+        <div class="views-exposed-widget views-submit-button">
+            <?php print $button; ?>
+        </div>
+        <?php if (!empty($reset_button)): ?>
+            <div class="views-exposed-widget views-reset-button">
+                <?php print $reset_button; ?>
             </div>
         <?php endif; ?>
         
