@@ -879,6 +879,11 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 }
 
 
+
+
+
+
+
 /*property search views */
 .region-sidebar-first .region-inner{
     padding: 0 15px;
@@ -982,58 +987,68 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 
 
 /*results...*/
-.view-property-search table{
+.view-property-search table,
+.view-property-search-rentals table{
     border: none;
 }
 
-.view-property-search td, .view-property-search th{
+.view-property-search td, .view-property-search th,
+.view-property-search-rentals td, .view-property-search-rentals th{
     padding: 0 20px 20px 0;
     text-align: center;
 
 }
 
-.view-property-search .field-wrapper{
+.view-property-search .field-wrapper,
+.view-property-search-rentals .field-wrapper{
     background-color: #fff;
     padding: 10px;
 }
 
 
-.view-property-search .views-field-title a{
+.view-property-search .views-field-title a,
+.view-property-search-rentals .views-field-title a{
     font-weight: 200;
     color: #7C8783;
     font-size: 20px;
     text-decoration: none;
 }
 
-.view-property-search .views-field-field-town{
+.view-property-search .views-field-field-town,
+.view-property-search-rentals .views-field-field-town{
     font-weight: 200;
     color: #505050;
     font-size: 18px;
 }
 
-.view-property-search .views-field-field-bedrooms{
+.view-property-search .views-field-field-bedrooms,
+.view-property-search-rentals .views-field-field-bedrooms{
     font-weight: 200;
     color: #505050;
     font-size: 14px;
 }
 
-.view-property-search .views-field-field-price{
+.view-property-search .views-field-field-price,
+.view-property-search-rentals .views-field-field price{
     font-weight: 200;
     color: #7C8783;
     font-size: 20px;
 }
 
-.view-property-search table{
+.view-property-search table,
+.view-property-search-rentals table{
     margin-bottom: 0;
 }
 
-.view-property-search tr.row-1.row-first.row-last .field-wrapper{
+.view-property-search tr.row-1.row-first.row-last .field-wrapper,
+.view-property-search-rentals tr.row-1.row-first.row-last .field-wrapper{
     width: 180px;
     height: 228px;
 }
 
 /*pager */
-.view-property-search .item-list{
+.view-property-search .item-list,
+.view-property-search-rentals .item-list{
     margin-bottom: 20px;
 }
 
