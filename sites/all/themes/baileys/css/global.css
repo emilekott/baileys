@@ -44,6 +44,18 @@ a img:hover{
     opacity: 0.5;
 }
 
+.breadcrumb a{
+    text-decoration: none;
+    transition: color .25s ease-in-out;
+    -moz-transition: color .25s ease-in-out;
+    -o-transition: color .25s ease-in-out;
+    -webkit-transition: color .25s ease-in-out;
+}
+
+.breadcrumb a:hover{
+    color: #721c0f;
+    text-decoration: underline;
+}
 
 ul, ul.menu li, ol {
     list-style-position: inside;
@@ -1174,26 +1186,30 @@ ul#view-modes li a:hover {
 }
 
 /*featured slideshow */
-.page-property-search-property-for-sale .region-preface-first .region-inner{
+.page-property-for-sale .region-preface-first .region-inner,
+.page-page-property-to-let .region-preface-first .region-inner{
     padding: 10px 15px;
 }
 
-.view-featured-properties-sale{
+.view-featured-properties-sale, .view-featured-properties-lets{
     margin-top: 10px;
 }
 
-#views_slideshow_cycle_main_featured_properties_sale-block{
+#views_slideshow_cycle_main_featured_properties_sale-block,
+#views_slideshow_cycle_main_featured_properties_lets-block{
     padding: 0 50px;
     background: #fff;
 }
 
-.view-featured-properties-sale .views-slideshow-cycle-main-frame-row {
+.view-featured-properties-sale .views-slideshow-cycle-main-frame-row,
+.view-featured-properties-lets .views-slideshow-cycle-main-frame-row{
     width: 100% !important;
     background-color: #fff;
     padding: 10px 0;
 }
 
-.view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-field-image{
+.view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-field-image,
+.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-field-image{
     float: left;
     margin: 0 30px 0 0;
 }
@@ -1203,16 +1219,24 @@ ul#view-modes li a:hover {
 .view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-field-bedrooms,
 .view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-field-overview,
 .view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-field-price,
-.view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-nid{
+.view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-nid,
+.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-title,
+.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-field-town,
+.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-field-bedrooms,
+.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-field-overview,
+.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-field-price,
+.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-nid{
     float:left;
     width: 390px;
 }
 
-#views_slideshow_controls_text_featured_properties_sale-block{
+#views_slideshow_controls_text_featured_properties_sale-block
+#views_slideshow_controls_text_featured_properties_lets-block{
     position: relative;
 }
 
-#views_slideshow_controls_text_previous_featured_properties_sale-block{
+#views_slideshow_controls_text_previous_featured_properties_sale-block,
+#views_slideshow_controls_text_previous_featured_properties_lets-block{
     background: url('../images/prev-horizontal.png') no-repeat;
     width: 32px;
     height: 0;
@@ -1229,11 +1253,13 @@ ul#view-modes li a:hover {
     -webkit-transition: opacity .25s ease-in-out;
 }
 
-#views_slideshow_controls_text_previous_featured_properties_sale-block:hover{
+#views_slideshow_controls_text_previous_featured_properties_sale-block:hover,
+#views_slideshow_controls_text_previous_featured_properties_lets-block:hover{
     opacity: 0.5;
 }
 
-#views_slideshow_controls_text_next_featured_properties_sale-block{
+#views_slideshow_controls_text_next_featured_properties_sale-block,
+#views_slideshow_controls_text_next_featured_properties_lets-block{
     background: url('../images/next-horizontal.png') no-repeat;
     width: 32px;
     height: 0;
@@ -1250,15 +1276,18 @@ ul#view-modes li a:hover {
     -webkit-transition: opacity .25s ease-in-out;
 }
 
-#views_slideshow_controls_text_next_featured_properties_sale-block:hover{
+#views_slideshow_controls_text_next_featured_properties_sale-block:hover,
+#views_slideshow_controls_text_next_featured_properties_lets-block:hover{
     opacity: 0.5;
 }
 
-#views_slideshow_controls_text_pause_featured_properties_sale-block{
+#views_slideshow_controls_text_pause_featured_properties_sale-block,
+#views_slideshow_controls_text_pause_featured_properties_lets-block{
     display: none;
 }
 
-.view-featured-properties-sale .views-field-title a {
+.view-featured-properties-sale .views-field-title a ,
+.view-featured-properties-lets .views-field-title a {
     font-weight: 200;
     color: #7C8783;
     font-size: 20px;
@@ -1269,40 +1298,47 @@ ul#view-modes li a:hover {
     -webkit-transition: color .25s ease-in-out;
 }
 
-.view-featured-properties-sale .views-field-title a:hover{
+.view-featured-properties-sale .views-field-title a:hover,
+.view-featured-properties-lets .views-field-title a:hover{
     color: #505050;
 }
 
-.view-featured-properties-sale .views-field-field-town {
+.view-featured-properties-sale .views-field-field-town,
+.view-featured-properties-lets .views-field-field-town{
     font-weight: 200;
     color: #505050;
     font-size: 18px;
 }
 
-.view-featured-properties-sale .views-field-field-bedrooms {
+.view-featured-properties-sale .views-field-field-bedrooms,
+.view-featured-properties-lets .views-field-field-bedrooms{
     font-weight: 200;
     color: #505050;
     font-size: 14px;
 }
 
-.view-featured-properties-sale .views-field-field-price {
+.view-featured-properties-sale .views-field-field-price,
+.view-featured-properties-lets .views-field-field-price{
     font-weight: 200;
     color: #7C8783;
     font-size: 20px;
     margin-bottom: 5px;
 }
 
-.view-featured-properties-sale .views-field-field-overview{
+.view-featured-properties-sale .views-field-field-overview,
+.view-featured-properties-lets .views-field-field-overview{
     margin: 5px 0;
 }
 
-.view-featured-properties-sale ul.bookmarks-slider{
+.view-featured-properties-sale ul.bookmarks-slider,
+.view-featured-properties-lets ul.bookmarks-slider{
     position: absolute;
     left: 430px;
     bottom: 10px;
     
 }
 
-.view-featured-properties-sale ul.bookmarks-slider li{
+.view-featured-properties-sale ul.bookmarks-slider li,
+.view-featured-properties-lets ul.bookmarks-slider li{
     margin: 0 10px 0 0;
 }

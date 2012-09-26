@@ -3,9 +3,19 @@
     //add this script to module and only call it on product finder page...
     Drupal.behaviors.node_slideshow = {
         attach: function (context, settings) {
-         
+           var apply;
            
-           var apply = $('.views-exposed-widget input#edit-submit-property-search');
+           if ($('.views-exposed-widget input#edit-submit-property-search').length>0){
+               //sales
+               apply = $('.views-exposed-widget input#edit-submit-property-search');
+           }
+           else{
+               //lettings
+               apply = $('.views-exposed-widget input#edit-submit-property-search-rentals');
+           }
+           
+           
+           
            apply.hide();
 
            

@@ -2,7 +2,9 @@
 
 function sliders_views_pre_render(&$view)
 {
-    if($view->name == 'property_search' && $view->editing == FALSE)
+    $viewname = $view->name;
+    
+    if(($viewname == 'property_search'||  $viewname == 'property_search_rentals')&& $view->editing == FALSE)
     {
         //these need to be loaded on power-slider view page
         drupal_add_js(drupal_get_path('module', 'sliders') . '/sliders.js');
@@ -11,6 +13,14 @@ function sliders_views_pre_render(&$view)
 
 function sliders_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'views_exposed_form'){
+      $view = views_get_page_view();
+      $view_name = $view->name;
+      
+      $form['view_name'] = array(
+          '#type' => 'value',
+          '#value' => $view_name,
+      );
+      
       
       //add better sort labels
       $form['sort_bef_combine']['#options']['created ASC'] = 'Sort: Date (Oldest First)';
@@ -91,6 +101,8 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
       $form['#info']['filter-field_features_tid'] = $features;
       $form['#info']['update_features'] = $update_features;
       
+      
+      
       $form['new_reset'] = array(
           '#type' => 'submit',
           '#value' => 'Reset All',
@@ -98,9 +110,20 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
           '#submit' => array('reset_property_search'),
       );
       
+      
       //add some labels for budget
-      $form['field_price_value']['#title']= '£ min';
-      $form['field_price_value_1']['#title'] = '£ max';
+      
+      
+
+      if($view_name =='property_search_rentals'){
+        $form['field_price_value']['#title']= '£/month min';
+        $form['field_price_value_1']['#title'] = '£/month max';
+      }
+      else{
+      
+        $form['field_price_value']['#title']= '£ min';
+        $form['field_price_value_1']['#title'] = '£ max';
+      }
       $form['#info']['filter-field_price_value']['label'] = 'Budget';
       $form['#info']['filter-field_price_value_1']['label'] ='';
      
@@ -110,27 +133,31 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
       $form['#info']['filter-field_bedrooms_value']['label'] = 'Bedrooms';
       $form['#info']['filter-field_bedrooms_value_1']['label'] = '';
       
-      //wrap up the between fields
-/*
-      $form['field_price_value']['#prefix'] = '<div class="webform-container-inline"><div class="exposed-field-wrapper">';
-      $form['field_price_value']['#suffix'] = '</div>';
 
-      $form['field_price_value_1']['#prefix'] = '<div class="exposed-field-wrapper">';
-      $form['field_price_value_1']['#suffix'] = '</div></div>';
-      */
   }
 }
 
 
-function reset_property_search(){
-    
+function reset_property_search(&$form, &$form_state){
+    $view_name = $form_state['values']['view_name'];
     if (isset($_GET['mode'])){
         $mode = $_GET['mode'];
-        drupal_goto("property-search/property-for-sale", array('query'=>array(
-            'mode' => $mode)));
+        if ($view_name == 'property_search'){
+            drupal_goto("property-for-sale", array('query'=>array(
+                'mode' => $mode)));
+        }
+        else{
+            drupal_goto("property-to-let", array('query'=>array(
+                'mode' => $mode)));
+        }
     }
     else {
-        drupal_goto('property-search/property-for-sale');
+        if ($view_name == 'property_search'){
+            drupal_goto('property-for-sale');
+        }
+        else {
+            drupal_goto('property-to-let');
+        }
     }
         
 }
