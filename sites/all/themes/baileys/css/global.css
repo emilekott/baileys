@@ -949,6 +949,11 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
     display: inline-block;
 }
 
+form#views-exposed-form-property-search-rentals-page > div,
+form#views-exposed-form-property-search-page > div{
+    position:relative;
+}
+
 #edit-sort-bef-combine{
     position: absolute;
     top: 0;
