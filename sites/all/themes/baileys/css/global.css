@@ -550,6 +550,17 @@ h1#page-title{
 }
 
 
+/*self catering block */
+.block-block-4{
+    background-color: #fff;
+    margin: 10px 15px;
+    padding: 20px 10px 0 10px;
+}
+
+.block-block-4 p{
+    margin-bottom: 0;
+}
+
 /*main elements*/
 .not-front .region-preface-first .region-inner{
     padding: 10px 0 10px 15px;
@@ -1187,7 +1198,7 @@ ul#view-modes li a:hover {
 
 /*featured slideshow */
 .page-property-for-sale .region-preface-first .region-inner,
-.page-page-property-to-let .region-preface-first .region-inner{
+.page-property-to-let .region-preface-first .region-inner{
     padding: 10px 15px;
 }
 
@@ -1199,6 +1210,11 @@ ul#view-modes li a:hover {
 #views_slideshow_cycle_main_featured_properties_lets-block{
     padding: 0 50px;
     background: #fff;
+}
+
+#views_slideshow_controls_text_featured_properties_lets-block,
+#views_slideshow_controls_text_featured_properties_sale-block{
+    position: relative;
 }
 
 .view-featured-properties-sale .views-slideshow-cycle-main-frame-row,
