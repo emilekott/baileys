@@ -29,6 +29,16 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
       $form['sort_bef_combine']['#options']['field_price_value ASC'] = 'Sort: Price (Low-High)';
       $form['sort_bef_combine']['#options']['field_price_value DESC'] = 'Sort: Price (High-Low)';
       
+      $form['items_per_page']['#options']['9'] = "Items per page: 9";
+      $form['items_per_page']['#options']['18'] = "Items per page: 18";
+      $form['items_per_page']['#options']['27'] = "Items per page: 27";
+      $form['items_per_page']['#options']['36'] = "Items per page: 36";
+      $form['items_per_page']['#options']['45'] = "Items per page: 45";
+      $form['items_per_page']['#options']['54'] = "Items per page: 54";
+      $form['items_per_page']['#options']['63'] = "Items per page: 63";
+      $form['items_per_page']['#options']['All'] = "Items per page: All";
+      $form['items_per_page']['#title'] = "";
+      
       $form['distance']['postal_code']['#title'] = 'Post Code';
       
       //build some update buttons

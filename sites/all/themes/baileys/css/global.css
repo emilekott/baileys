@@ -962,6 +962,14 @@ form#views-exposed-form-property-search-page > div{
     z-index:10;
 }
 
+#edit-items-per-page{
+    position: absolute;
+    top: 0px;
+    left: 500px;
+    width: 200px;
+    z-index: 10;
+}
+
 #edit-new-reset{
 }
 
