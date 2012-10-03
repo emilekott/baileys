@@ -4,66 +4,70 @@
  * Implementation of hook_block_info().
  */
 function bookmarks_block_info() {
-  $blocks['bookmarks-block'] = array(
-    'info' => t('Bookmarks Block'),
-  );
-  return $blocks;
+    $blocks['bookmarks-block'] = array(
+        'info' => t('Bookmarks Block'),
+    );
+    return $blocks;
 }
- 
+
 /**
  * Implementation of hook_block_view().
  */
-function bookmarks_block_view($delta='') {
-  $block = array();
-  switch ($delta) {
-    case 'bookmarks-block':
-      $block['subject'] = '';
-      $block['content'] = bookmarks_content();
-      break;
-  }
-  return $block;
+function bookmarks_block_view($delta = '') {
+    $block = array();
+    switch ($delta) {
+        case 'bookmarks-block':
+            $block['subject'] = '';
+            $block['content'] = bookmarks_content();
+            break;
+    }
+    return $block;
 }
- 
 
+function bookmarks_content() {
 
-
-
-function bookmarks_content(){
-    
-    if (arg(0) == 'node' && is_numeric(arg(1))){
+    if (arg(0) == 'node' && is_numeric(arg(1))) {
         global $user;
         $nodeid = arg(1);
         $node = node_load($nodeid);
         $flag = flag_get_flag('shortlist');
         $destination = drupal_get_destination();
-        $login = l(t('login'),'user',array('query' => $destination));
-        $register = l(t('register'),'user/register',array('query' => $destination));
-        
+        $login = l(t('login'), 'user', array('query' => $destination));
+        $register = l(t('register'), 'user/register', array('query' => $destination));
+
         $html = "";
-        
+
         $shortlist = flag_create_link('shortlist', $nodeid);
         $html .= '<ul class="bookmarks">';
-        $viewing = l(t('Arrange Viewing'), 'arrange-viewing', array('query' => array('prop' => $nodeid, 'destination' => 'node/'.$nodeid), 'attributes'=>array('class' => 'bookmark') ));
-        $html .= "<li>$viewing</li>";
-        $html .= '<li>'.$shortlist.'</li>';
+        $viewing = l(t('Arrange Viewing'), 'arrange-viewing', array('query' => array('prop' => $nodeid, 'destination' => 'node/' . $nodeid), 'attributes' => array('class' => 'bookmark')));
+        if ($node->type != 'holiday_let') {
+            $html .= "<li>$viewing</li>";
+        } else {
+            $book = field_get_items('node', $node, 'field_supercontrol_id');
+            if ($book) {
+                $first_book = reset($book);
+                $book_value = $first_book['value'];
+                $sc_link = '<a class="bookmark" href="https://secure.supercontrol.co.uk/availability/availability_weekly.asp?ownerID=1613&cottageID=cottageID_'.$book_value.'&siteID=11439">View Availability</a>';
+                $html .= "<li>$sc_link</li>";
+            }
+        }
+        $html .= '<li>' . $shortlist . '</li>';
         $html .= '<li><a class="bookmark" onclick="window.print()" href="#">Print</a></li>';
-        $email = l(t('Email'), 'email-details-property', array('query' => array('prop' => $nodeid, 'destination' => 'node/'.$nodeid), 'attributes'=>array('class' => 'bookmark') ));
+        $email = l(t('Email'), 'email-details-property', array('query' => array('prop' => $nodeid, 'destination' => 'node/' . $nodeid), 'attributes' => array('class' => 'bookmark')));
         $html .= "<li>$email</li>";
         $html .= '</ul>';
-        if (!$user->uid) {
-            $html .= '<div id="shortlist-details">Please '.$login.' or '.$register.' to create your shortlist.</div>';
+        if ((!$user->uid) && ($node->type != 'holiday_let')){
+            $html .= '<div id="shortlist-details">Please ' . $login . ' or ' . $register . ' to create your shortlist.</div>';
+        } else {
+            /* $num = $flag->get_count($nodeid);
+              $num_people = format_plural($num, '1 person', '@count people' );
+              $html .= '<div id="shortlist-details">Property shortlisted by '.$num_people.'</div>'; */
         }
-        else{
-            /*$num = $flag->get_count($nodeid);
-            $num_people = format_plural($num, '1 person', '@count people' );
-            $html .= '<div id="shortlist-details">Property shortlisted by '.$num_people.'</div>';*/
-        }
-        
+
         //facebook
         //twitter...
-        
     }
-    
+
 
 
     return $html;

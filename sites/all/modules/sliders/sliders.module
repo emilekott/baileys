@@ -1,174 +1,174 @@
 <?php
 
-function sliders_views_pre_render(&$view)
-{
+function sliders_views_pre_render(&$view) {
     $viewname = $view->name;
-    
-    if(($viewname == 'property_search'||  $viewname == 'property_search_rentals')&& $view->editing == FALSE)
-    {
+
+    if (($viewname == 'property_search' || $viewname == 'property_search_rentals') && $view->editing == FALSE) {
         //these need to be loaded on power-slider view page
         drupal_add_js(drupal_get_path('module', 'sliders') . '/sliders.js');
+    }
+    
+    if ($viewname == 'holiday_lettings'){
+        drupal_add_js(drupal_get_path('module', 'sliders') . '/holidays.js');
     }
 }
 
 function sliders_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'views_exposed_form'){
-      $view = views_get_page_view();
-      $view_name = $view->name;
-      
-      $form['view_name'] = array(
-          '#type' => 'value',
-          '#value' => $view_name,
-      );
-      
-      
-      //add better sort labels
-      $form['sort_bef_combine']['#options']['created ASC'] = 'Sort: Date (Oldest First)';
-      $form['sort_bef_combine']['#options']['created DESC'] = 'Sort: Date (Newest First)';
-      
-      $form['sort_bef_combine']['#options']['field_price_value ASC'] = 'Sort: Price (Low-High)';
-      $form['sort_bef_combine']['#options']['field_price_value DESC'] = 'Sort: Price (High-Low)';
-      
-      $form['items_per_page']['#options']['9'] = "Items per page: 9";
-      $form['items_per_page']['#options']['18'] = "Items per page: 18";
-      $form['items_per_page']['#options']['27'] = "Items per page: 27";
-      $form['items_per_page']['#options']['36'] = "Items per page: 36";
-      $form['items_per_page']['#options']['45'] = "Items per page: 45";
-      $form['items_per_page']['#options']['54'] = "Items per page: 54";
-      $form['items_per_page']['#options']['63'] = "Items per page: 63";
-      $form['items_per_page']['#options']['All'] = "Items per page: All";
-      $form['items_per_page']['#title'] = "";
-      
-      $form['distance']['postal_code']['#title'] = 'Post Code';
-      
-      //build some update buttons
-      $form['update_budget'] = array(
-        '#markup' => '<input type="submit" class="update-button" value="Update Budget" />',
-      );
-      
-      $form['update_town'] = array(
-        '#markup' => '<input type="submit" class="update-button" value="Update Town" />',
-      );
-      
-      $form['update_bedrooms'] = array(
-          '#markup' => '<input type="submit" class="update-button" value="Update Bedrooms" />',
-      );
-      
-      $form['update_features'] = array(
-          '#markup' => '<input type="submit" class="update-button" value="Update Features" />',
-      );
-      
-      $update_budget= array(
-          'value' => 'update_budget',
-      );
-      
-      $update_town = array(
-          'value' => 'update_town',
-      );
-      
-      $update_bedrooms = array(
-          'value' =>'update_bedrooms',
-      );
-      
-      $update_features = array(
-          'value' => 'update_features',
-      );
-      
-      /*
-       * reset form order...
-       * how to sort this is posted here:
-       * http://snyderp.tumblr.com/post/12048300955/drupal-bits-programmatically-editing-and-reordering
-     */  
-      $property_type = $form['#info']['filter-field_property_type_tid'];
-      $budget_min = $form['#info']['filter-field_price_value'];
-      $budget_max = $form['#info']['filter-field_price_value_1'];
-      $town = $form['#info']['filter-field_town_tid'];
-      $bedrooms_min = $form['#info']['filter-field_bedrooms_value'];
-      $bedrooms_max = $form['#info']['filter-field_bedrooms_value_1'];
-      $features = $form['#info']['filter-field_features_tid'];
-      
-      //unset form
-      unset($form['#info']['filter-field_property_type_tid']);
-      unset($form['#info']['filter-field_price_value']);
-      unset($form['#info']['filter-field_price_value_1']);
-      unset($form['#info']['filter-field_town_tid']);
-      unset($form['#info']['filter-field_bedrooms_value']);
-      unset($form['#info']['filter-field_bedrooms_value_1']);
-      unset($form['#info']['filter-field_features_tid']);
-      
+    if ($form_id == 'views_exposed_form') {
+        $view = views_get_page_view();
+        $view_name = $view->name;
+        if ($view_name == 'holiday_lettings') {
+           
 
-      //reset form IN THIS ORDER   
-      $form['#info']['filter-field_property_type_tid'] = $property_type;
-      $form['#info']['filter-field_price_value'] = $budget_min;
-      $form['#info']['filter-field_price_value_1'] = $budget_max;
-      $form['#info']['update_budget'] = $update_budget;
-      $form['#info']['filter-field_town_tid'] = $town;
-      $form['#info']['update_town'] = $update_town;
-      $form['#info']['filter-field_bedrooms_value'] = $bedrooms_min;
-      $form['#info']['filter-field_bedrooms_value_1'] = $bedrooms_max;
-      $form['#info']['update_bedrooms'] = $update_bedrooms;
-      
-      $form['#info']['filter-field_features_tid'] = $features;
-      $form['#info']['update_features'] = $update_features;
-      
-      
-      
-      $form['new_reset'] = array(
-          '#type' => 'submit',
-          '#value' => 'Reset All',
-          '#weight' => '-2000',
-          '#submit' => array('reset_property_search'),
-      );
-      
-      
-      //add some labels for budget
-      
-      
+            return;
+        }
+        $form['view_name'] = array(
+            '#type' => 'value',
+            '#value' => $view_name,
+        );
+        
 
-      if($view_name =='property_search_rentals'){
-        $form['field_price_value']['#title']= '£/month min';
-        $form['field_price_value_1']['#title'] = '£/month max';
-      }
-      else{
-      
-        $form['field_price_value']['#title']= '£ min';
-        $form['field_price_value_1']['#title'] = '£ max';
-      }
-      $form['#info']['filter-field_price_value']['label'] = 'Budget';
-      $form['#info']['filter-field_price_value_1']['label'] ='';
-     
-      //ad some labels for bedrooms
-      $form['field_bedrooms_value']['#title'] = 'Min';
-      $form['field_bedrooms_value_1']['#title'] = 'Max';
-      $form['#info']['filter-field_bedrooms_value']['label'] = 'Bedrooms';
-      $form['#info']['filter-field_bedrooms_value_1']['label'] = '';
-      
+        //add better sort labels
+        $form['sort_bef_combine']['#options']['created ASC'] = 'Sort: Date (Oldest First)';
+        $form['sort_bef_combine']['#options']['created DESC'] = 'Sort: Date (Newest First)';
 
-  }
+        $form['sort_bef_combine']['#options']['field_price_value ASC'] = 'Sort: Price (Low-High)';
+        $form['sort_bef_combine']['#options']['field_price_value DESC'] = 'Sort: Price (High-Low)';
+
+        $form['items_per_page']['#options']['9'] = "Items per page: 9";
+        $form['items_per_page']['#options']['18'] = "Items per page: 18";
+        $form['items_per_page']['#options']['27'] = "Items per page: 27";
+        $form['items_per_page']['#options']['36'] = "Items per page: 36";
+        $form['items_per_page']['#options']['45'] = "Items per page: 45";
+        $form['items_per_page']['#options']['54'] = "Items per page: 54";
+        $form['items_per_page']['#options']['63'] = "Items per page: 63";
+        $form['items_per_page']['#options']['All'] = "Items per page: All";
+        $form['items_per_page']['#title'] = "";
+
+        $form['distance']['postal_code']['#title'] = 'Post Code';
+
+        
+
+        //build some update buttons
+        $form['update_budget'] = array(
+            '#markup' => '<input type="submit" class="update-button" value="Update Budget" />',
+        );
+
+        $form['update_town'] = array(
+            '#markup' => '<input type="submit" class="update-button" value="Update Town" />',
+        );
+
+        $form['update_bedrooms'] = array(
+            '#markup' => '<input type="submit" class="update-button" value="Update Bedrooms" />',
+        );
+
+        $form['update_features'] = array(
+            '#markup' => '<input type="submit" class="update-button" value="Update Features" />',
+        );
+
+        $update_budget = array(
+            'value' => 'update_budget',
+        );
+
+        $update_town = array(
+            'value' => 'update_town',
+        );
+
+        $update_bedrooms = array(
+            'value' => 'update_bedrooms',
+        );
+
+        $update_features = array(
+            'value' => 'update_features',
+        );
+
+        /*
+         * reset form order...
+         * how to sort this is posted here:
+         * http://snyderp.tumblr.com/post/12048300955/drupal-bits-programmatically-editing-and-reordering
+         */
+        $property_type = $form['#info']['filter-field_property_type_tid'];
+        $budget_min = $form['#info']['filter-field_price_value'];
+        $budget_max = $form['#info']['filter-field_price_value_1'];
+        $town = $form['#info']['filter-field_town_tid'];
+        $bedrooms_min = $form['#info']['filter-field_bedrooms_value'];
+        $bedrooms_max = $form['#info']['filter-field_bedrooms_value_1'];
+        $features = $form['#info']['filter-field_features_tid'];
+
+        //unset form
+        unset($form['#info']['filter-field_property_type_tid']);
+        unset($form['#info']['filter-field_price_value']);
+        unset($form['#info']['filter-field_price_value_1']);
+        unset($form['#info']['filter-field_town_tid']);
+        unset($form['#info']['filter-field_bedrooms_value']);
+        unset($form['#info']['filter-field_bedrooms_value_1']);
+        unset($form['#info']['filter-field_features_tid']);
+
+
+        //reset form IN THIS ORDER   
+        $form['#info']['filter-field_property_type_tid'] = $property_type;
+        $form['#info']['filter-field_price_value'] = $budget_min;
+        $form['#info']['filter-field_price_value_1'] = $budget_max;
+        $form['#info']['update_budget'] = $update_budget;
+        $form['#info']['filter-field_town_tid'] = $town;
+        $form['#info']['update_town'] = $update_town;
+        $form['#info']['filter-field_bedrooms_value'] = $bedrooms_min;
+        $form['#info']['filter-field_bedrooms_value_1'] = $bedrooms_max;
+        $form['#info']['update_bedrooms'] = $update_bedrooms;
+
+        $form['#info']['filter-field_features_tid'] = $features;
+        $form['#info']['update_features'] = $update_features;
+
+
+
+        $form['new_reset'] = array(
+            '#type' => 'submit',
+            '#value' => 'Reset All',
+            '#weight' => '-2000',
+            '#submit' => array('reset_property_search'),
+        );
+
+
+        //add some labels for budget
+
+
+
+        if ($view_name == 'property_search_rentals') {
+            $form['field_price_value']['#title'] = '£/month min';
+            $form['field_price_value_1']['#title'] = '£/month max';
+        } else {
+
+            $form['field_price_value']['#title'] = '£ min';
+            $form['field_price_value_1']['#title'] = '£ max';
+        }
+        $form['#info']['filter-field_price_value']['label'] = 'Budget';
+        $form['#info']['filter-field_price_value_1']['label'] = '';
+
+        //ad some labels for bedrooms
+        $form['field_bedrooms_value']['#title'] = 'Min';
+        $form['field_bedrooms_value_1']['#title'] = 'Max';
+        $form['#info']['filter-field_bedrooms_value']['label'] = 'Bedrooms';
+        $form['#info']['filter-field_bedrooms_value_1']['label'] = '';
+    }
 }
 
-
-function reset_property_search(&$form, &$form_state){
+function reset_property_search(&$form, &$form_state) {
     $view_name = $form_state['values']['view_name'];
-    if (isset($_GET['mode'])){
+    if (isset($_GET['mode'])) {
         $mode = $_GET['mode'];
-        if ($view_name == 'property_search'){
-            drupal_goto("property-for-sale", array('query'=>array(
-                'mode' => $mode)));
+        if ($view_name == 'property_search') {
+            drupal_goto("property-for-sale", array('query' => array(
+                    'mode' => $mode)));
+        } else {
+            drupal_goto("property-to-let", array('query' => array(
+                    'mode' => $mode)));
         }
-        else{
-            drupal_goto("property-to-let", array('query'=>array(
-                'mode' => $mode)));
-        }
-    }
-    else {
-        if ($view_name == 'property_search'){
+    } else {
+        if ($view_name == 'property_search') {
             drupal_goto('property-for-sale');
-        }
-        else {
+        } else {
             drupal_goto('property-to-let');
         }
     }
-        
 }
 

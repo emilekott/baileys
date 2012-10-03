@@ -1,0 +1,5 @@
+name = Supercontrol Integration
+description = "Provides integration with Supercontrol"
+package = Fields
+core = 7.x
+files[] = supercontrol.module

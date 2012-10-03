@@ -61,7 +61,12 @@ function facts_content(){
             $price_status_value = $first_price_status['taxonomy_term']->name;
             if ($price_status_value!='Normal') $html .="<tr><td>&nbsp;</td><td>($price_status_value)</td></tr>";
         }
-        
+        $sleeps = field_get_items('node', $node, 'field_sleeps');
+        if ($sleeps){
+            $first_sleeps = reset($sleeps);
+            $sleeps_value = $first_sleeps['value'];
+            $html .= "<tr><th>Sleeps:</th><td>$sleeps_value</td></tr>";
+        }
         
         $bedrooms = field_get_items('node', $node, 'field_bedrooms');
         if ($bedrooms){

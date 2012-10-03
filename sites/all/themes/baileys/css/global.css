@@ -770,17 +770,22 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
     margin-right: 30px;
 }
 
-.field-name-field-property-type, .field-name-field-bedrooms, .field-name-field-features{
+.field-name-field-property-type, .field-name-field-bedrooms, .field-name-field-features, .field-name-field-sleeps, .field-name-field-features-holiday{
     margin-bottom: 20px;
+    float: right;
+    width: 220px;
+    clear: right;
 }
 
 
 /*disclaimer */
-.block-3{
+.block-3, .block-5, .block-6{
     background-color: #fff;
     padding: 15px;
     margin-bottom: 15px;
 }
+
+
 
 
 
@@ -1024,26 +1029,29 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 
 /*results...*/
 .view-property-search table,
-.view-property-search-rentals table{
+.view-property-search-rentals table, .view-holiday-lettings table{
     border: none;
 }
 
 .view-property-search td, .view-property-search th,
-.view-property-search-rentals td, .view-property-search-rentals th{
+.view-property-search-rentals td, .view-property-search-rentals th,
+.view-holiday-lettings td, .view-holiday-lettings th{
     padding: 0 20px 20px 0;
     text-align: center;
 
 }
 
 .view-property-search .field-wrapper,
-.view-property-search-rentals .field-wrapper{
+.view-property-search-rentals .field-wrapper,
+.view-holiday-lettings .field-wrapper{
     background-color: #fff;
     padding: 10px;
 }
 
 
 .view-property-search .views-field-title a,
-.view-property-search-rentals .views-field-title a{
+.view-property-search-rentals .views-field-title a,
+.view-holiday-lettings .views-field-title a{
     font-weight: 200;
     color: #7C8783;
     font-size: 20px;
@@ -1051,14 +1059,16 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 }
 
 .view-property-search .views-field-field-town,
-.view-property-search-rentals .views-field-field-town{
+.view-property-search-rentals .views-field-field-town,
+.view-holiday-lettings .views-field-town{
     font-weight: 200;
     color: #505050;
     font-size: 18px;
 }
 
 .view-property-search .views-field-field-bedrooms,
-.view-property-search-rentals .views-field-field-bedrooms{
+.view-property-search-rentals .views-field-field-bedrooms,
+.view-holiday-lettings .views-field-field-sleeps{
     font-weight: 200;
     color: #505050;
     font-size: 14px;
@@ -1072,7 +1082,8 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 }
 
 .view-property-search table,
-.view-property-search-rentals table{
+.view-property-search-rentals table,
+.view-holiday-lettings table{
     margin-bottom: 0;
 }
 
@@ -1080,6 +1091,11 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 .view-property-search-rentals tr.row-1.row-first.row-last .field-wrapper{
     width: 180px;
     height: 228px;
+}
+
+.view-holiday-lettings tr.row-1.row-first.row-last .field-wrapper{
+    width: 180px;
+    height: 195px;
 }
 
 /*pager */
@@ -1209,63 +1225,68 @@ ul#view-modes li a:hover {
     border: none;
 }
 
+
+
 /*featured slideshow */
 .page-property-for-sale .region-preface-first .region-inner,
-.page-property-to-let .region-preface-first .region-inner{
+.page-property-to-let .region-preface-first .region-inner,
+page-holiday-lettings .region-preface-first .region-inner{
     padding: 10px 15px;
 }
 
-.view-featured-properties-sale, .view-featured-properties-lets{
+.view-featured-properties-sale, .view-featured-properties-lets, view-featured-properties-holidays{
     margin-top: 10px;
 }
 
 #views_slideshow_cycle_main_featured_properties_sale-block,
-#views_slideshow_cycle_main_featured_properties_lets-block{
+#views_slideshow_cycle_main_featured_properties_lets-block,
+#views_slideshow_cycle_main_featured_properties_holidays-block{
     padding: 0 50px;
     background: #fff;
 }
 
 #views_slideshow_controls_text_featured_properties_lets-block,
-#views_slideshow_controls_text_featured_properties_sale-block{
+#views_slideshow_controls_text_featured_properties_sale-block,
+#views_slideshow_controls_text_featured_properties_holidays-block{
     position: relative;
 }
 
-.view-featured-properties-sale .views-slideshow-cycle-main-frame-row,
-.view-featured-properties-lets .views-slideshow-cycle-main-frame-row{
+.page-property-for-sale .views-slideshow-cycle-main-frame-row,
+.page-property-to-let .views-slideshow-cycle-main-frame-row,
+.page-holiday-lettings .views-slideshow-cycle-main-frame-row
+
+{
     width: 100% !important;
     background-color: #fff;
     padding: 10px 0;
 }
 
-.view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-field-image,
-.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-field-image{
+.views-slideshow-cycle-main-frame-row .views-field-field-image
+{
     float: left;
     margin: 0 30px 0 0;
 }
 
-.view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-title,
-.view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-field-town,
-.view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-field-bedrooms,
-.view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-field-overview,
-.view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-field-price,
-.view-featured-properties-sale .views-slideshow-cycle-main-frame-row .views-field-nid,
-.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-title,
-.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-field-town,
-.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-field-bedrooms,
-.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-field-overview,
-.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-field-price,
-.view-featured-properties-lets .views-slideshow-cycle-main-frame-row .views-field-nid{
+.views-slideshow-cycle-main-frame-row .views-field-title,
+.views-slideshow-cycle-main-frame-row .views-field-field-town,
+.views-slideshow-cycle-main-frame-row .views-field-field-bedrooms,
+.views-slideshow-cycle-main-frame-row .views-field-field-overview,
+.views-slideshow-cycle-main-frame-row .views-field-field-price,
+.views-slideshow-cycle-main-frame-row .views-field-nid
+{
     float:left;
     width: 390px;
 }
 
 #views_slideshow_controls_text_featured_properties_sale-block
-#views_slideshow_controls_text_featured_properties_lets-block{
+#views_slideshow_controls_text_featured_properties_lets-block,
+#views_slideshow_controls_text_featured_properties_holidays-block{
     position: relative;
 }
 
 #views_slideshow_controls_text_previous_featured_properties_sale-block,
-#views_slideshow_controls_text_previous_featured_properties_lets-block{
+#views_slideshow_controls_text_previous_featured_properties_lets-block,
+#views_slideshow_controls_text_previous_featured_properties_holidays-block{
     background: url('../images/prev-horizontal.png') no-repeat;
     width: 32px;
     height: 0;
@@ -1283,12 +1304,14 @@ ul#view-modes li a:hover {
 }
 
 #views_slideshow_controls_text_previous_featured_properties_sale-block:hover,
-#views_slideshow_controls_text_previous_featured_properties_lets-block:hover{
+#views_slideshow_controls_text_previous_featured_properties_lets-block:hover,
+#views_slideshow_controls_text_previous_featured_properties_holidays-block:hover{
     opacity: 0.5;
 }
 
 #views_slideshow_controls_text_next_featured_properties_sale-block,
-#views_slideshow_controls_text_next_featured_properties_lets-block{
+#views_slideshow_controls_text_next_featured_properties_lets-block,
+#views_slideshow_controls_text_next_featured_properties_holidays-block{
     background: url('../images/next-horizontal.png') no-repeat;
     width: 32px;
     height: 0;
@@ -1306,17 +1329,18 @@ ul#view-modes li a:hover {
 }
 
 #views_slideshow_controls_text_next_featured_properties_sale-block:hover,
-#views_slideshow_controls_text_next_featured_properties_lets-block:hover{
+#views_slideshow_controls_text_next_featured_properties_lets-block:hover,
+#views_slideshow_controls_text_next_featured_properties_holidays-block:hover{
     opacity: 0.5;
 }
 
 #views_slideshow_controls_text_pause_featured_properties_sale-block,
-#views_slideshow_controls_text_pause_featured_properties_lets-block{
+#views_slideshow_controls_text_pause_featured_properties_lets-block,
+#views_slideshow_controls_text_pause_featured_properties_holidays-block{
     display: none;
 }
 
-.view-featured-properties-sale .views-field-title a ,
-.view-featured-properties-lets .views-field-title a {
+.views_slideshow_cycle_main .views-field-title a  {
     font-weight: 200;
     color: #7C8783;
     font-size: 20px;
@@ -1327,47 +1351,55 @@ ul#view-modes li a:hover {
     -webkit-transition: color .25s ease-in-out;
 }
 
-.view-featured-properties-sale .views-field-title a:hover,
-.view-featured-properties-lets .views-field-title a:hover{
+.views_slideshow_cycle_main .views-field-title a:hover{
     color: #505050;
 }
 
-.view-featured-properties-sale .views-field-field-town,
-.view-featured-properties-lets .views-field-field-town{
+.views_slideshow_cycle_main .views-field-field-town{
     font-weight: 200;
     color: #505050;
     font-size: 18px;
 }
 
-.view-featured-properties-sale .views-field-field-bedrooms,
-.view-featured-properties-lets .views-field-field-bedrooms{
+.views_slideshow_cycle_main .views-field-field-bedrooms, .views_slideshow_cycle_main .views-field-field-sleeps{
     font-weight: 200;
     color: #505050;
     font-size: 14px;
 }
 
-.view-featured-properties-sale .views-field-field-price,
-.view-featured-properties-lets .views-field-field-price{
+.views_slideshow_cycle_main .views-field-field-price{
     font-weight: 200;
     color: #7C8783;
     font-size: 20px;
     margin-bottom: 5px;
 }
 
-.view-featured-properties-sale .views-field-field-overview,
-.view-featured-properties-lets .views-field-field-overview{
+.views_slideshow_cycle_main .views-field-field-overview{
     margin: 5px 0;
 }
 
-.view-featured-properties-sale ul.bookmarks-slider,
-.view-featured-properties-lets ul.bookmarks-slider{
+.views_slideshow_cycle_main ul.bookmarks-slider{
     position: absolute;
     left: 430px;
     bottom: 10px;
     
 }
 
-.view-featured-properties-sale ul.bookmarks-slider li,
-.view-featured-properties-lets ul.bookmarks-slider li{
+.views_slideshow_cycle_main ul.bookmarks-slider li{
     margin: 0 10px 0 0;
+}
+
+
+
+/*super control and holiday stuff */
+.block-supercontrol{
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 20px 10px;
+}
+
+.field-name-field-supercontrol-id{
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
 }

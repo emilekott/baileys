@@ -1,0 +1,151 @@
+<?php
+
+/**
+ * @file
+ * provides a custom formatter to add an iframed availibility calendar to holiday lets.
+ *
+ */
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function supercontrol_field_formatter_info() {
+    return array(
+        'supercontrol_formatter' => array(
+            'label' => t('Availibility Calendar'),
+            'field types' => array('number_integer'),
+            'settings' => array(
+                'width' => '500',
+                'height' => '500',
+                'title' => 'Availibilty and Pricing',
+            ),
+        ),
+    );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function supercontrol_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+    //This gets the view_mode where our settings are stored
+    $display = $instance['display'][$view_mode];
+    //This gets the actual settings
+    $settings = $display['settings'];
+    //Initialize the element variable
+    $element = array();
+    //Add your select box
+    $element['width'] = array(
+        '#type' => 'textfield',
+        '#label' => t('Width'),
+        '#description' => t('Enter width in pixels'),
+        '#default_value' => $settings['width'],
+    );
+
+    $element['height'] = array(
+        '#type' => 'textfield',
+        '#label' => t('Height'),
+        '#description' => t('Enter height in pixels'),
+        '#default_value' => $settings['height'],
+    );
+    $element['title'] = array(
+        '#type' => 'textfield',
+        '#label' => t('Title'),
+        '#description' => t('Enter title'),
+        '#default_value' => $settings['title'],
+    );
+    return $element;
+}
+
+/*
+ * Implements hook_field_formatter_settings_summary().
+ */
+
+function supercontrol_field_formatter_settings_summary($field, $instance, $view_mode) {
+    $display = $instance['display'][$view_mode];
+    $settings = $display['settings'];
+    $summary = t('Insert an availibility calendar with the dimentsions @width x @height with title @title', array(
+        '@width' => $settings['width'],
+        '@height' => $settings['height'],
+        '@title' => $settings['title'],
+            ));
+    return $summary;
+}
+
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function supercontrol_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+    $result = array();
+    $settings = $display['settings'];
+    $settings_width = $settings['width'];
+    $settings_height = $settings['height'];
+    $title = $settings['title'];
+
+    foreach ($items as $delta => $item) {
+        //grab the ID
+        $supercontrol_id = $item['value'];
+        
+        //build iframe code
+        if($supercontrol_id){
+            $html = '<div style="clear:both"></div>';
+            //$html .= '<h3>Pricing</h3>'; 
+            //$html .= '<iframe src="https://secure.supercontrol.co.uk/tariff/iframe.asp?ownerID=1613&siteID=11439&gridlink=&show_list=0&show_avail_link=0&cottageID='.$supercontrol_id.'" style="width: 300px;" frameborder="0"></iframe>';
+            $html .= '<h3 style="margin-bottom:5px;">Pricing and Availability</h3>';
+            $html .= '<p style="font-style:italic;">To view the exact price or book, please click your arrival date on the calendar.</p>';
+            $html .= '<iframe src="https://secure.supercontrol.co.uk/avail_ajax/index.asp?ownerID=1613&cottageID='.$supercontrol_id.'&siteID=11439" style="width: '.$settings_width.'px; height: '.$settings_height.'px;" frameborder="0"></iframe>';
+            
+            $result[$delta] = array(
+                '#markup' => $html,
+            );
+        }
+    }
+    return $result;
+}
+
+/**
+ * Implementation of hook_block_info().
+ */
+function supercontrol_block_info() {
+  $blocks['supercontrol-block'] = array(
+    'info' => t('Rental Pricing'),
+  );
+  return $blocks;
+}
+ 
+/**
+ * Implementation of hook_block_view().
+ */
+function supercontrol_block_view($delta='') {
+  $block = array();
+  switch ($delta) {
+    case 'supercontrol-block':
+      $block['subject'] = 'Holiday Pricing';
+      $block['content'] = supercontrol_block_content();
+      break;
+  }
+  return $block;
+}
+ 
+
+
+function supercontrol_block_content(){
+    $html = "";
+
+    if (arg(0) == 'node' && is_numeric(arg(1))){
+        $nodeid = arg(1);
+        $node = node_load( $nodeid );
+        
+        
+        $sc = field_get_items('node', $node, 'field_supercontrol_id');
+        if ($sc){
+            $first_sc = reset($sc);
+            $sc_value = $first_sc['value'];
+            $html = '<iframe src="https://secure.supercontrol.co.uk/tariff/iframe.asp?ownerID=1613&siteID=11439&gridlink=&show_list=0&show_avail_link=0&cottageID='.$sc_value.'" style="width: 260px;" frameborder="0"></iframe>';
+            $html .= '<a style="float:right; display:inline;" class="bookmark" href="https://secure.supercontrol.co.uk/availability/availability_weekly.asp?ownerID=1613&cottageID=cottageID_'.$sc_value.'&siteID=11439">Book This Property Online Now</a>';
+            
+        }
+    } 
+        
+    return $html;
+}
