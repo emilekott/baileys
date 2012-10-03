@@ -1403,3 +1403,70 @@ page-holiday-lettings .region-preface-first .region-inner{
     margin: 20px 0;
     padding: 20px;
 }
+
+
+
+
+/*superfish nav */
+
+
+
+
+.block-superfish ul#superfish-1{
+    margin: 0;
+    padding: 0;
+}
+
+.block-superfish ul#superfish-1 li{
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+.block-superfish ul#superfish-1 li.sf-depth-2{
+    background: #AFBDB8;
+    width:300px;
+}
+
+.block-superfish ul#superfish-1 li a{
+    border-left: none;
+    border-top: none;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 16px;
+    display: inline-block;
+    padding: 12px 53px;
+    border-right: 2px solid #f1eee3;
+    
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease;
+}
+
+.block-superfish ul#superfish-1 li ul{
+    margin-top: 7px;
+}
+
+.block-superfish ul#superfish-1 li.sf-depth-2 a{
+    border: none;
+    padding: 15px 0 15px 15px;
+    display: block;
+    border-bottom: 2px solid #fff;
+}
+
+.block-superfish ul#superfish-1 li.last a{
+    border: none;
+}
+
+.block-superfish ul#superfish-1 li a:hover,
+.block-superfish ul#superfish-1 li a.active,
+.block-superfish ul#superfish-1 li.active a,
+.block-superfish ul#superfish-1 li.active-trail > a
+{
+    background-color: #505050;
+}
+
