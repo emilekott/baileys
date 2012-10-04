@@ -21,7 +21,8 @@ h6{font-size: 17px;}
 
 a:link, a:visited, li a.active{
     color: #505050;
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: bold;
     -webkit-transition: color 0.4s ease;
     -moz-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
@@ -1054,7 +1055,7 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 .view-holiday-lettings .views-field-title a{
     font-weight: 200;
     color: #7C8783;
-    font-size: 20px;
+    font-size: 14px;
     text-decoration: none;
 }
 
@@ -1435,7 +1436,7 @@ page-holiday-lettings .region-preface-first .region-inner{
     color: #fff;
     text-decoration: none;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 16px;
     display: inline-block;
     padding: 12px 53px;
