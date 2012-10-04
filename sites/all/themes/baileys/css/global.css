@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h2, h3, h4, h5, h6 {
-    font-weight: 200;
+    font-weight: normal;
     color: #7c8783;
     margin-bottom: 15px;
 }
@@ -157,7 +157,7 @@ textarea{
 }
 
 label{
-    font-weight: 200;
+    font-weight: normal;
     color: #7c8783;
     font-size: 20px
 
@@ -424,7 +424,7 @@ h1#page-title{
 
     font-size: 30px;
     line-height: 28px;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .front h1#page-title{
@@ -434,7 +434,7 @@ h1#page-title{
 .field-name-field-subtitle{
     margin-bottom: 20px;
     font-size: 20px;
-    font-weight: 200;
+    font-weight: normal;
 }
 
 
@@ -485,11 +485,11 @@ h1#page-title{
 }
 
 .block-locator-block-locator-block h2{
-    font-weight: 200;
+    font-weight: normal;
 }
 
 .block-locator-block-locator-block .tooltip{
-    font-weight: 200;
+    font-weight: normal;
     font-style: italic;
 }
 
@@ -511,7 +511,7 @@ h1#page-title{
 .block-locator-block-locator-block select{
     color: #505050;
     font-family: "Lato", arial, verdana;
-    font-weight: 200;
+    font-weight: normal;
 }
 
 .block-locator-block-locator-block .form-item-type{
@@ -522,7 +522,7 @@ h1#page-title{
     width: 170px;
     height: 27px;
     background: transparent url('../images/select-arrow.png') no-repeat right;
-    font-weight: 200;
+    font-weight: normal;
     float:left;
     margin:0;
 }
@@ -590,7 +590,7 @@ h1#page-title{
 .block-field-let-status{
     margin-right: 5px;
     color: #721c0f;
-    font-weight: 200;
+    font-weight: normal;
 }
 
 
@@ -936,7 +936,7 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 }
 
 .views-exposed-form label{
-    font-weight: 200;
+    font-weight: normal;
     color: #505050;
     font-size: 20px;
 }
@@ -1053,7 +1053,7 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 .view-property-search .views-field-title a,
 .view-property-search-rentals .views-field-title a,
 .view-holiday-lettings .views-field-title a{
-    font-weight: 200;
+    font-weight: normal;
     color: #7C8783;
     font-size: 14px;
     text-decoration: none;
@@ -1062,7 +1062,7 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 .view-property-search .views-field-field-town,
 .view-property-search-rentals .views-field-field-town,
 .view-holiday-lettings .views-field-town{
-    font-weight: 200;
+    font-weight: normal;
     color: #505050;
     font-size: 18px;
 }
@@ -1070,14 +1070,14 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 .view-property-search .views-field-field-bedrooms,
 .view-property-search-rentals .views-field-field-bedrooms,
 .view-holiday-lettings .views-field-field-sleeps{
-    font-weight: 200;
+    font-weight: normal;
     color: #505050;
     font-size: 14px;
 }
 
 .view-property-search .views-field-field-price,
 .view-property-search-rentals .views-field-field price{
-    font-weight: 200;
+    font-weight: normal;
     color: #7C8783;
     font-size: 20px;
 }
@@ -1342,7 +1342,7 @@ page-holiday-lettings .region-preface-first .region-inner{
 }
 
 .views_slideshow_cycle_main .views-field-title a  {
-    font-weight: 200;
+    font-weight: normal;
     color: #7C8783;
     font-size: 20px;
     text-decoration: none;
@@ -1357,19 +1357,19 @@ page-holiday-lettings .region-preface-first .region-inner{
 }
 
 .views_slideshow_cycle_main .views-field-field-town{
-    font-weight: 200;
+    font-weight: normal;
     color: #505050;
     font-size: 18px;
 }
 
 .views_slideshow_cycle_main .views-field-field-bedrooms, .views_slideshow_cycle_main .views-field-field-sleeps{
-    font-weight: 200;
+    font-weight: normal;
     color: #505050;
     font-size: 14px;
 }
 
 .views_slideshow_cycle_main .views-field-field-price{
-    font-weight: 200;
+    font-weight: normal;
     color: #7C8783;
     font-size: 20px;
     margin-bottom: 5px;
@@ -1436,7 +1436,7 @@ page-holiday-lettings .region-preface-first .region-inner{
     color: #fff;
     text-decoration: none;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: bold;    
     line-height: 16px;
     display: inline-block;
     padding: 12px 53px;
