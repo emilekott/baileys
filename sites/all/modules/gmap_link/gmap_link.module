@@ -34,7 +34,7 @@ function gmap_link_content() {
         if ($location) {
             $map_link = gmap_link_gb_google($location);
         }
-        $html = l(t('Full Size Map / Directions'), $map_link, array('attributes' => array('target' => '_blank', 'class'=>'map-link')));
+        $html = l(t('Full Size Map / Directions'), $map_link, array('attributes' => array('target' => '_blank', 'class' => 'map-link')));
     }
     return $html;
 }
@@ -47,17 +47,10 @@ function gmap_link_gb_google($location = array()) {
             $query_params[] = $location[$field];
         }
     }
-    $street = $location['street'];
-    if ($street) {
-        $street = urlencode($street);
-    }
 
     if (count($query_params)) {
-        if ($street) {
-            return ('http://maps.google.co.uk?q=' . urlencode(implode(', ', $query_params)) . "+(" . $street . ")");
-        } else {
-            return ('http://maps.google.co.uk?q=' . urlencode(implode(', ', $query_params)));
-        }
+
+        return ('http://maps.google.co.uk?q=' . urlencode(implode(', ', $query_params)));
     } else {
         return NULL;
     }
