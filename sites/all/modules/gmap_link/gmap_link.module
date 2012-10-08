@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * Implementation of hook_block_info().
+ */
+function gmap_link_block_info() {
+    $blocks['gmap-link-block'] = array(
+        'info' => t('Gmap Link Block'),
+    );
+
+    return $blocks;
+}
+
+/**
+ * Implementation of hook_block_view().
+ */
+function gmap_link_block_view($delta = '') {
+    $block = array();
+    switch ($delta) {
+        case 'gmap-link-block':
+            $block['subject'] = '';
+            $block['content'] = gmap_link_content();
+            break;
+    }
+    return $block;
+}
+
+function gmap_link_content() {
+
+    if (arg(0) == 'node' && is_numeric(arg(1))) {
+        $nodeid = arg(1);
+        $node = node_load($nodeid);
+        $location = $node->locations[0];
+        if ($location) {
+            $map_link = gmap_link_gb_google($location);
+        }
+        $html = l(t('Full Size Map / Directions'), $map_link, array('attributes' => array('target' => '_blank')));
+    }
+    return $html;
+}
+
+function gmap_link_gb_google($location = array()) {
+    $query_params = array();
+
+    foreach (array('latitude', 'longitude') as $field) {
+        if (isset($location[$field]) && $location[$field] != "") {
+            $query_params[] = $location[$field];
+        }
+    }
+    $street = $location['street'];
+    if ($street) {
+        $street = urlencode($street);
+    }
+
+    if (count($query_params)) {
+        if ($street) {
+            return ('http://maps.google.co.uk?q=' . urlencode(implode(', ', $query_params)) . "+(" . $street . ")");
+        } else {
+            return ('http://maps.google.co.uk?q=' . urlencode(implode(', ', $query_params)));
+        }
+    } else {
+        return NULL;
+    }
+}

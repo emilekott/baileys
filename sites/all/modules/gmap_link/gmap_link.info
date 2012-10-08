@@ -1,0 +1,5 @@
+name = Gmap Link
+description = Builds a gmap link in a block
+core = 7.x
+
+project = "Gmap Link"
