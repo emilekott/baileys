@@ -680,7 +680,7 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
     padding: 0 15px;
 }
 
-.view-floorplans,.block-gmap-location{
+.view-floorplans{
     margin-bottom: 30px;
 }
 
@@ -689,6 +689,11 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
     font-size: 14px;
 }
 
+
+.block-gmap-link{
+    text-align: right;
+    margin-bottom: 30px;
+}
 
 /*facts block */
 

@@ -34,7 +34,7 @@ function gmap_link_content() {
         if ($location) {
             $map_link = gmap_link_gb_google($location);
         }
-        $html = l(t('Full Size Map / Directions'), $map_link, array('attributes' => array('target' => '_blank')));
+        $html = l(t('Full Size Map / Directions'), $map_link, array('attributes' => array('target' => '_blank', 'class'=>'map-link')));
     }
     return $html;
 }
