@@ -45,3 +45,14 @@ function baileys_delta_blocks_breadcrumb($variables) {
     }
 }
 
+function baileys_preprocess_html(&$variables) {
+    $element = array(
+        '#type' => 'html_tag',
+        '#tag' => 'meta',
+        '#attributes' => array('http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge'),
+        '#weight' => -1001,
+    );
+    drupal_add_html_head($element, 'chrome_frame');
+}
+
+
