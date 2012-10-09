@@ -1105,8 +1105,7 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 }
 
 /*pager */
-.view-property-search .item-list,
-.view-property-search-rentals .item-list{
+.view .item-list{
     margin-bottom: 20px;
 }
 
