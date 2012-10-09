@@ -93,7 +93,7 @@ function supercontrol_field_formatter_view($entity_type, $entity, $field, $insta
             //$html .= '<iframe src="https://secure.supercontrol.co.uk/tariff/iframe.asp?ownerID=1613&siteID=11439&gridlink=&show_list=0&show_avail_link=0&cottageID='.$supercontrol_id.'" style="width: 300px;" frameborder="0"></iframe>';
             $html .= '<h3 style="margin-bottom:5px;">Pricing and Availability</h3>';
             $html .= '<p style="font-style:italic;">To view the exact price or book, please click your arrival date on the calendar.</p>';
-            $html .= '<iframe src="https://secure.supercontrol.co.uk/avail_ajax/index.asp?ownerID=1613&cottageID='.$supercontrol_id.'&siteID=11439" style="width: '.$settings_width.'px; height: '.$settings_height.'px;" frameborder="0"></iframe>';
+            $html .= '<iframe frameBorder="0" src="https://secure.supercontrol.co.uk/avail_ajax/index.asp?ownerID=1613&cottageID='.$supercontrol_id.'&siteID=11439" style="width: '.$settings_width.'px; height: '.$settings_height.'px;" frameborder="0"></iframe>';
             
             $result[$delta] = array(
                 '#markup' => $html,
@@ -141,7 +141,7 @@ function supercontrol_block_content(){
         if ($sc){
             $first_sc = reset($sc);
             $sc_value = $first_sc['value'];
-            $html = '<iframe src="https://secure.supercontrol.co.uk/tariff/iframe.asp?ownerID=1613&siteID=11439&gridlink=&show_list=0&show_avail_link=0&cottageID='.$sc_value.'" style="width: 260px;" frameborder="0"></iframe>';
+            $html = '<iframe frameBorder="0" src="https://secure.supercontrol.co.uk/tariff/iframe.asp?ownerID=1613&siteID=11439&gridlink=&show_list=0&show_avail_link=0&cottageID='.$sc_value.'" style="width: 260px;" frameborder="0"></iframe>';
             $html .= '<a style="float:right; display:inline;" class="bookmark" href="https://secure.supercontrol.co.uk/availability/availability_weekly.asp?ownerID=1613&cottageID=cottageID_'.$sc_value.'&siteID=11439">Book This Property Online Now</a>';
             
         }
