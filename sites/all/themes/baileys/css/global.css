@@ -1443,10 +1443,10 @@ page-holiday-lettings .region-preface-first .region-inner{
     color: #fff;
     text-decoration: none;
     font-size: 16px;
-    font-weight: normal;    
+    font-weight: bold;    
     line-height: 16px;
     display: inline-block;
-    padding: 12px 53px;
+    padding: 12px 52px;
     border-right: 2px solid #f1eee3;
     
     -webkit-transition: background-color 0.4s ease;
@@ -1468,6 +1468,7 @@ page-holiday-lettings .region-preface-first .region-inner{
 
 .block-superfish ul#superfish-1 li.last a{
     border: none;
+    padding: 12px 57px;
 }
 
 .block-superfish ul#superfish-1 li a:hover,
