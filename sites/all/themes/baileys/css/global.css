@@ -1,7 +1,10 @@
+/* #333; to #333;
+#333 to #333; */
+
 body{
     background-color: #f1eee3;
     font-family: "Lato", arial, verdana;
-    color: #505050;
+    color: #333;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -10,7 +13,7 @@ h1, h2, h3, h4, h5, h6{
 
 h2, h3, h4, h5, h6 {
     font-weight: normal;
-    color: #7c8783;
+    color: #333;
     margin-bottom: 15px;
 }
 h3{font-size: 25px;}
@@ -20,7 +23,7 @@ h6{font-size: 17px;}
 
 
 a:link, a:visited, li a.active{
-    color: #505050;
+    color: #333;
     text-decoration: none;
     font-weight: bold;
     -webkit-transition: color 0.4s ease;
@@ -92,7 +95,7 @@ button, input[type="reset"], input[type="submit"], input[type="button"]{
 }
 
 button:hover, input[type="reset"]:hover, input[type="submit"]:hover, input[type="button"]:hover{
-    background-color: #505050;
+    background-color: #333;
 }
 
 
@@ -121,7 +124,7 @@ textarea, input[type="date"], input[type="datetime"], input[type="datetime-local
     background-color: #dddbd1;
     border: none;
 
-    color: #505050;
+    color: #333;
     outline: 0;
     padding: 2px 5px;
     font-size: 15px;
@@ -143,7 +146,7 @@ textarea, input[type="date"], input[type="datetime"], input[type="datetime-local
     background-color: #dddbd1;
     border: none;
 
-    color: #505050;
+    color: #333;
     outline: 0;
     padding: 2px 5px;
     font-size: 15px;
@@ -158,7 +161,7 @@ textarea{
 
 label{
     font-weight: normal;
-    color: #7c8783;
+    color: #333;
     font-size: 20px
 
 }
@@ -235,13 +238,13 @@ ul.primary li a {
 }
 
 ul.primary li.active a {
-    background-color:#505050;
+    background-color:#333;
     border:none;
     display:inline-block;
 }
 
 ul.primary li a:hover {
-    background-color: #505050;
+    background-color: #333;
     border: none;
 }
 
@@ -292,7 +295,7 @@ ul.primary li a:hover {
 }
 
 .region-user-first-inner ul.menu li a:hover{
-    background-color: #505050;
+    background-color: #333;
 }
 
 /* header contact */
@@ -303,7 +306,7 @@ ul.primary li a:hover {
 }
 
 .block-block-1 a{
-    color: #505050;
+    color: #333;
     text-decoration: none;
     font-weight: normal;
 }
@@ -357,7 +360,7 @@ nav.navigation ul#main-menu li.last a{
 nav.navigation ul#main-menu li a:hover,
 nav.navigation ul#main-menu li.active a,
 nav.navigation ul#main-menu li.active-trail a{
-    background-color: #505050;
+    background-color: #333;
 }
 
 
@@ -394,7 +397,7 @@ nav.navigation ul#main-menu li.active-trail a{
 }
 
 .view-trio-boxes .views-field-field-trio-link a:hover{
-    background-color: #505050;
+    background-color: #333;
 }
 
 .view-trio-boxes .views-field-field-trio-link a span.trio-link{
@@ -510,7 +513,7 @@ h1#page-title{
 
 .block-locator-block-locator-block input,
 .block-locator-block-locator-block select{
-    color: #505050;
+    color: #333;
     font-family: "Lato", arial, verdana;
     font-weight: normal;
 }
@@ -583,7 +586,7 @@ h1#page-title{
 }
 
 .field-name-field-price{
-    color: #7c8783;
+    color: #333;
 
 }
 
@@ -606,7 +609,7 @@ h1#page-title{
 }
 
 .jcarousel-item img:hover{
-    border: 1px solid #505050;
+    border: 1px solid #333;
 }
 
 .field-name-field-price-status, .field-name-field-town{
@@ -658,14 +661,14 @@ a.bookmark, ul.bookmarks a.flag{
 }
 
 a.bookmark:hover, ul.bookmarks a.flag:hover{
-    background-color: #505050;
+    background-color: #333;
 }
 
 
 
 #shortlist-count{
     background: white;
-    border: 1px solid #505050;
+    border: 1px solid #333;
     margin-left: 6px;
     height: 14px;
     line-height: 14px;
@@ -673,7 +676,7 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
     padding: 1px 2px;
     text-align: center;
     white-space: nowrap;
-    color: #505050;
+    color: #333;
 }
 
 
@@ -722,7 +725,7 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 
 .block-facts-facts-block th, .block-facts-facts-block td{
     padding: 0 0 5px 0;
-    color: #505050;
+    color: #333;
     border: none;
     background-color: transparent;
 }
@@ -748,7 +751,7 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 }
 
 .horizontal-tabs ul.horizontal-tabs-list .selected strong {
-    color: #505050;
+    color: #333;
     font-weight: normal;
 }
 
@@ -944,13 +947,13 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 
 .views-exposed-form label{
     font-weight: normal;
-    color: #505050;
+    color: #333;
     font-size: 20px;
 }
 
 .views-exposed-form .form-item label{
     font-size: 14px;
-    color: #505050;
+    color: #333;
 }
 
 .views-exposed-form input[type=checkbox]{
@@ -1061,7 +1064,7 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 .view-property-search-rentals .views-field-title a,
 .view-holiday-lettings .views-field-title a{
     font-weight: normal;
-    color: #7C8783;
+    color: #333;
     font-size: 14px;
     text-decoration: none;
 }
@@ -1070,7 +1073,7 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 .view-property-search-rentals .views-field-field-town,
 .view-holiday-lettings .views-field-town{
     font-weight: normal;
-    color: #505050;
+    color: #333;
     font-size: 18px;
 }
 
@@ -1078,14 +1081,14 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 .view-property-search-rentals .views-field-field-bedrooms,
 .view-holiday-lettings .views-field-field-sleeps{
     font-weight: normal;
-    color: #505050;
+    color: #333;
     font-size: 14px;
 }
 
 .view-property-search .views-field-field-price,
 .view-property-search-rentals .views-field-field price{
     font-weight: normal;
-    color: #7C8783;
+    color: #333;
     font-size: 20px;
 }
 
@@ -1166,12 +1169,12 @@ input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1{
 
 
 .pager li a:hover {
-    background: #505050;
+    background: #333;
     color: #fff;
 }
 
 .pager li.pager-current {
-    background: #505050;
+    background: #333;
     color: #fff;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -1223,12 +1226,12 @@ ul#view-modes li.default{
 }
 
 ul#view-modes li a.views-modes-active{
-    background-color: #505050;
+    background-color: #333;
     border: none;
 }
 
 ul#view-modes li a:hover {
-    background-color: #505050;
+    background-color: #333;
     border: none;
 }
 
@@ -1349,7 +1352,7 @@ page-holiday-lettings .region-preface-first .region-inner{
 
 .views_slideshow_cycle_main .views-field-title a  {
     font-weight: normal;
-    color: #7C8783;
+    color: #333;
     font-size: 20px;
     text-decoration: none;
     transition: color .25s ease-in-out;
@@ -1359,24 +1362,24 @@ page-holiday-lettings .region-preface-first .region-inner{
 }
 
 .views_slideshow_cycle_main .views-field-title a:hover{
-    color: #505050;
+    color: #333;
 }
 
 .views_slideshow_cycle_main .views-field-field-town{
     font-weight: normal;
-    color: #505050;
+    color: #333;
     font-size: 18px;
 }
 
 .views_slideshow_cycle_main .views-field-field-bedrooms, .views_slideshow_cycle_main .views-field-field-sleeps{
     font-weight: normal;
-    color: #505050;
+    color: #333;
     font-size: 14px;
 }
 
 .views_slideshow_cycle_main .views-field-field-price{
     font-weight: normal;
-    color: #7C8783;
+    color: #333;
     font-size: 20px;
     margin-bottom: 5px;
 }
@@ -1474,6 +1477,6 @@ page-holiday-lettings .region-preface-first .region-inner{
 .block-superfish ul#superfish-1 li.active a,
 .block-superfish ul#superfish-1 li.active-trail > a
 {
-    background-color: #505050;
+    background-color: #333;
 }
 
