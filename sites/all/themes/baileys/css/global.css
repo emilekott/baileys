@@ -1,11 +1,11 @@
 body{
     background-color: #f1eee3;
-    font-family: "Lato", arial, verdana;
+    font-family: arial, verdana;
     color: #505050;
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: "Lato", arial, verdana;
+    font-family: arial, verdana;
 }
 
 h2, h3, h4, h5, h6 {
@@ -71,7 +71,7 @@ button, input[type="reset"], input[type="submit"], input[type="button"]{
     background-clip: padding-box;
     border: none;
     cursor: pointer;
-    font-family: "Lato", arial, verdana;
+    font-family: arial, verdana;
     font-size: 13px;
     font-weight: bold !important;
     outline: 0;
@@ -125,7 +125,7 @@ textarea, input[type="date"], input[type="datetime"], input[type="datetime-local
     outline: 0;
     padding: 2px 5px;
     font-size: 15px;
-    font-family: "Lato", arial, verdana;
+    font-family: arial, verdana;
     height: 38px;
 }
 
@@ -147,7 +147,7 @@ textarea, input[type="date"], input[type="datetime"], input[type="datetime-local
     outline: 0;
     padding: 2px 5px;
     font-size: 15px;
-    font-family: "Lato", arial, verdana;
+    font-family: arial, verdana;
     height: 38px;
     width: 455px;
 }
@@ -511,7 +511,7 @@ h1#page-title{
 .block-locator-block-locator-block input,
 .block-locator-block-locator-block select{
     color: #505050;
-    font-family: "Lato", arial, verdana;
+    font-family: arial, verdana;
     font-weight: normal;
 }
 
