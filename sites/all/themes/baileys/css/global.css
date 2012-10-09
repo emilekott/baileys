@@ -21,9 +21,9 @@ h6{font-size: 17px;}
 
 
 a:link, a:visited, li a.active{
-    color: #505050;
+    color: #7C8783;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: normal;
     -webkit-transition: color 0.4s ease;
     -moz-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
