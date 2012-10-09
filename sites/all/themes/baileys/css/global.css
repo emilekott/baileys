@@ -1,6 +1,7 @@
 body{
     background-color: #f1eee3;
     font-family: "Lato", arial, verdana;
+    text-shadow: 0 0 1px rgba(0, 0, 0, .01);
     color: #505050;
 }
 
