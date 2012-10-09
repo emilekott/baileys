@@ -645,6 +645,7 @@ a.bookmark, ul.bookmarks a.flag{
     color: #fff;
     text-decoration: none;
     background-color: #721c10;
+    font-weight: normal;
     padding: 10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
