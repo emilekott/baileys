@@ -1465,7 +1465,9 @@ page-holiday-lettings .region-preface-first .region-inner{
     display: block;
     border-bottom: 2px solid #fff;
 }
-
+.block-superfish ul#superfish-1 li.sf-depth-2.last a{
+    padding: 15px 0 15px 15px;
+}
 .block-superfish ul#superfish-1 li.last a{
     border: none;
     padding: 12px 57px;
