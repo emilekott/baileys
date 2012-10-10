@@ -4,74 +4,81 @@
  * Implementation of hook_block_info().
  */
 function locator_block_block_info() {
-  $blocks['locator-block'] = array(
-    'info' => t('Locator Block'),
-  );
-  return $blocks;
+    $blocks['locator-block'] = array(
+        'info' => t('Locator Block'),
+    );
+    return $blocks;
 }
- 
+
 /**
  * Implementation of hook_block_view().
  */
-function locator_block_block_view($delta='') {
-  $block = array();
-  switch ($delta) {
-    case 'locator-block':
-      $block['subject'] = '';
-      $block['content'] = drupal_get_form('locator_block_locator_form');
-      break;
-  }
-  return $block;
+function locator_block_block_view($delta = '') {
+    $block = array();
+    switch ($delta) {
+        case 'locator-block':
+            $block['subject'] = '';
+            $block['content'] = drupal_get_form('locator_block_locator_form');
+            break;
+    }
+    return $block;
 }
- 
 
-
-
-
-function locator_block_locator_form($form, &$form_state){
+function locator_block_locator_form($form, &$form_state) {
     $form['tooltip'] = array(
         '#markup' => '<div class="tooltip">eg. West Wittering / PO20 8AB</div>',
     );
-    
+
     $form['location'] = array(
-      '#type' => 'textfield',
-      '#title' => 'Location',
-      '#title_display' => 'invisible',
-      '#default_value' => 'Enter Area, Town or Postcode',
-      '#size' => 30,
-      '#attributes' => array(
-          'onblur' => "if (this.value == '') {this.value = 'Enter Area, Town or Postcode';}",
-          'onfocus' => "if (this.value == 'Enter Area, Town or Postcode') {this.value = '';}"    
-      ),
-  );
-  //print_r($form['post_code']);
-  $form['type'] = array(
-      '#type' => 'select',
-      '#title' => 'Type',
-      '#default_value' => 'property_sale',
-      '#title_display' => 'invisible',
-      '#options' => array(
+        '#type' => 'textfield',
+        '#title' => 'Location',
+        '#title_display' => 'invisible',
+        '#default_value' => 'Enter Area, Town or Postcode',
+        '#size' => 30,
+        '#attributes' => array(
+            'onblur' => "if (this.value == '') {this.value = 'Enter Area, Town or Postcode';}",
+            'onfocus' => "if (this.value == 'Enter Area, Town or Postcode') {this.value = '';}"
+        ),
+    );
+    //print_r($form['post_code']);
+    $form['type'] = array(
+        '#type' => 'select',
+        '#title' => 'Type',
+        '#default_value' => 'property_sale',
+        '#title_display' => 'invisible',
+        '#options' => array(
             'property_sale' => "Property for Sale",
             'property_let' => "Property to Let"
-      ),
-  );
-    
-  $form['submit'] = array(
-      '#type' => 'submit', 
-      '#value' => 'Search',
-   );
-  
-  return $form;
+        ),
+    );
+
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'Search',
+    );
+
+    return $form;
 }
 
-function locator_block_locator_form_submit(&$form, &$form_state){
+function locator_block_locator_form_submit(&$form, &$form_state) {
 //needs rewriting for baileys...
-    $postcode = $form_state['values']['post_code'];
-    $country = $form_state['values']['country'];
-    drupal_goto('dealer-locator', array('query' => array(
-        'distance' => array(
-            'postal_code' => $postcode,
-            'country' => $country,
-        ),
-    )));
+    $postcode = $form_state['values']['location'];
+    //$country = $form_state['values']['country'];
+    $type = $form_state['values']['type'];
+    $query = array('query' => array(
+       'distance' => array(
+         'postal_code' => $postcode, 
+       ), 
+    ));
+    
+    
+    if ($type == 'property_sale') {
+
+        drupal_goto('property-for-sale', $query);
+                
+    }
+    else{
+        
+        drupal_goto('property-to-let', $query);
+    }
 }

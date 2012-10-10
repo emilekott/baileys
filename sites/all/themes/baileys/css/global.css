@@ -1012,8 +1012,9 @@ input#edit-field-sleeps-value, input#edit-field-sleeps-value-1
 }
 
 
-.form-item-distance-search-distance, .form-item-distance-search-units{
-    display:none;
+
+#edit-distance-wrapper{
+    display: none;
 }
 
 .views-submit-button input{
