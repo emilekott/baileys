@@ -782,7 +782,7 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 .field-name-field-property-type, .field-name-field-bedrooms, .field-name-field-features, .field-name-field-sleeps, .field-name-field-features-holiday{
     margin-bottom: 20px;
     float: right;
-    width: 220px;
+    width: 180px;
     clear: right;
 }
 
