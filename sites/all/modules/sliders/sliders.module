@@ -7,8 +7,8 @@ function sliders_views_pre_render(&$view) {
         //these need to be loaded on power-slider view page
         drupal_add_js(drupal_get_path('module', 'sliders') . '/sliders.js');
     }
-    
-    if ($viewname == 'holiday_lettings'){
+
+    if ($viewname == 'holiday_lettings') {
         drupal_add_js(drupal_get_path('module', 'sliders') . '/holidays.js');
     }
 }
@@ -18,15 +18,96 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
         $view = views_get_page_view();
         $view_name = $view->name;
         if ($view_name == 'holiday_lettings') {
-           
 
+            $form['field_sleeps_value']['#title'] = 'Min';
+            $form['field_sleeps_value_1']['#title'] = 'Max';
+            $form['#info']['filter-field_sleeps_value']['label'] = 'Sleeps';
+            $form['#info']['filter-field_sleeps_value_1']['label'] = '';
+
+            $form['update_sleeps'] = array(
+                '#markup' => '<input type="submit" class="update-button" value="Update" />',
+            );
+
+            $update_sleeps = array(
+                'value' => 'update_sleeps',
+            );
+
+
+            $form['update_town'] = array(
+                '#markup' => '<input type="submit" class="update-button" value="Update Town" />',
+            );
+
+
+
+
+            $form['update_features'] = array(
+                '#markup' => '<input type="submit" class="update-button" value="Update Features" />',
+            );
+
+
+
+            $update_town = array(
+                'value' => 'update_town',
+            );
+
+
+
+            $update_features = array(
+                'value' => 'update_features',
+            );
+
+
+            $property_type = $form['#info']['filter-field_property_type_tid'];
+            $sleeps_min = $form['#info']['filter-field_sleeps_value'];
+            $sleeps_max = $form['#info']['filter-field_sleeps_value_1'];
+            $town = $form['#info']['filter-field_town_tid'];
+            $features = $form['#info']['filter-field_features_holiday_tid'];
+
+            unset($form['#info']['filter-field_property_type_tid']);
+            unset($form['#info']['filter-field_sleeps_value']);
+            unset($form['#info']['filter-field_sleeps_value_1']);
+            unset($form['#info']['filter-field_town_tid']);
+            unset($form['#info']['filter-field_features_holiday_tid']);
+
+            //change order
+            $form['#info']['filter-field_sleeps_value'] = $sleeps_min;
+            $form['#info']['filter-field_sleeps_value_1'] = $sleeps_max;
+            $form['#info']['update_sleeps'] = $update_sleeps;
+            $form['#info']['filter-field_property_type_tid'] = $property_type;
+
+            $form['#info']['filter-field_town_tid'] = $town;
+            $form['#info']['update_town'] = $update_town;
+            $form['#info']['filter-field_features_holiday_tid'] = $features;
+            $form['#info']['update_features'] = $update_features;
+
+
+            $form['items_per_page']['#options']['9'] = "Items per page: 9";
+            $form['items_per_page']['#options']['18'] = "Items per page: 18";
+            $form['items_per_page']['#options']['27'] = "Items per page: 27";
+            $form['items_per_page']['#options']['36'] = "Items per page: 36";
+            $form['items_per_page']['#options']['45'] = "Items per page: 45";
+            $form['items_per_page']['#options']['54'] = "Items per page: 54";
+            $form['items_per_page']['#options']['63'] = "Items per page: 63";
+            $form['items_per_page']['#options']['All'] = "Items per page: All";
+            $form['items_per_page']['#title'] = "";
+
+            //remove towns
+
+            unset($form['field_town_tid']['#options']['55']); //almodington
+            unset($form['field_town_tid']['#options']['29']); //birdham
+            unset($form['field_town_tid']['#options']['30']); //birdham
+            unset($form['field_town_tid']['#options']['31']); //chi
+            
             return;
         }
+
+
+
         $form['view_name'] = array(
             '#type' => 'value',
             '#value' => $view_name,
         );
-        
+
 
         //add better sort labels
         $form['sort_bef_combine']['#options']['created ASC'] = 'Sort: Date (Oldest First)';
@@ -47,7 +128,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
 
         $form['distance']['postal_code']['#title'] = 'Post Code';
 
-        
+
 
         //build some update buttons
         $form['update_budget'] = array(
