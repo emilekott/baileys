@@ -1068,8 +1068,8 @@ input#edit-field-sleeps-value, input#edit-field-sleeps-value-1
 .view-property-search-rentals .views-field-title a,
 .view-holiday-lettings .views-field-title a{
     font-weight: normal;
-    color: #7C8783;
-    font-size: 14px;
+   /* color: #7C8783;
+    font-size: 14px;*/
     text-decoration: none;
 }
 
@@ -1077,23 +1077,21 @@ input#edit-field-sleeps-value, input#edit-field-sleeps-value-1
 .view-property-search-rentals .views-field-field-town,
 .view-holiday-lettings .views-field-town{
     font-weight: normal;
-    color: #505050;
-    font-size: 18px;
+    /*font-size: 18px;*/
 }
 
 .view-property-search .views-field-field-bedrooms,
 .view-property-search-rentals .views-field-field-bedrooms,
 .view-holiday-lettings .views-field-field-sleeps{
     font-weight: normal;
-    color: #505050;
-    font-size: 14px;
+    /*font-size: 14px;*/
 }
 
 .view-property-search .views-field-field-price,
 .view-property-search-rentals .views-field-field price{
     font-weight: normal;
-    color: #7C8783;
-    font-size: 20px;
+    /*color: #7C8783;
+    font-size: 20px;*/
 }
 
 .view-property-search table,
