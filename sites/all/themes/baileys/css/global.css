@@ -320,10 +320,7 @@ ul.primary li a:hover {
     background-color: #afbdb8;
 }
 
-#zone-menu .region-menu{
-    border-left: 2px solid #f1eee3;
-    border-right: 2px solid #f1eee3;
-}
+
 
 nav.navigation ul#main-menu{
     margin: 0;
@@ -1427,6 +1424,8 @@ page-holiday-lettings .region-preface-first .region-inner{
 .block-superfish ul#superfish-1{
     margin: 0;
     padding: 0;
+    border-left: 2px solid #f1eee3;
+    border-right: 2px solid #f1eee3;
 }
 
 .block-superfish ul#superfish-1 li{
@@ -1450,8 +1449,11 @@ page-holiday-lettings .region-preface-first .region-inner{
     font-weight: bold;    
     line-height: 16px;
     display: inline-block;
-    padding: 12px 52px;
+    width: 156px;
+    /*padding: 12px 52px;*/
+    padding: 12px 0;
     border-right: 2px solid #f1eee3;
+    text-align: center;
     
     -webkit-transition: background-color 0.4s ease;
     -moz-transition: background-color 0.4s ease;
@@ -1468,13 +1470,15 @@ page-holiday-lettings .region-preface-first .region-inner{
     padding: 15px 0 15px 15px;
     display: block;
     border-bottom: 2px solid #fff;
+    text-align: left;
 }
 .block-superfish ul#superfish-1 li.sf-depth-2.last a{
     padding: 15px 0 15px 15px;
 }
 .block-superfish ul#superfish-1 li.last a{
     border: none;
-    padding: 12px 57px;
+    /*padding: 12px 57px;*/
+    
 }
 
 .block-superfish ul#superfish-1 li a:hover,
