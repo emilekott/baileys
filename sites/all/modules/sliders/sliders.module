@@ -18,7 +18,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
         $view = views_get_page_view();
         $view_name = $view->name;
         if ($view_name == 'holiday_lettings') {
-
+            
             $form['field_sleeps_value']['#title'] = 'Min';
             $form['field_sleeps_value_1']['#title'] = 'Max';
             $form['#info']['filter-field_sleeps_value']['label'] = 'Sleeps';
@@ -101,7 +101,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
             return;
         }
 
-
+        //print_r($form);
 
         $form['view_name'] = array(
             '#type' => 'value',
