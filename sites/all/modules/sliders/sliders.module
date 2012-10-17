@@ -175,7 +175,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
         $bedrooms_min = $form['#info']['filter-field_bedrooms_value'];
         $bedrooms_max = $form['#info']['filter-field_bedrooms_value_1'];
         $features = $form['#info']['filter-field_features_tid'];
-        $created = $form['#info']['filter-created'];
+        //$created = $form['#info']['filter-created'];
         
 
         //unset form
@@ -186,7 +186,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
         unset($form['#info']['filter-field_bedrooms_value']);
         unset($form['#info']['filter-field_bedrooms_value_1']);
         unset($form['#info']['filter-field_features_tid']);
-        unset($form['#info']['filter-created']);
+        //unset($form['#info']['filter-created']);
 
 
         //reset form IN THIS ORDER   
@@ -194,7 +194,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
         $form['#info']['filter-field_price_value'] = $budget_min;
         $form['#info']['filter-field_price_value_1'] = $budget_max;
         $form['#info']['update_budget'] = $update_budget;
-        $form['#info']['filter-created'] = $created;
+        //$form['#info']['filter-created'] = $created;
         $form['#info']['filter-field_property_type_tid'] = $property_type;
         $form['#info']['filter-field_town_tid'] = $town;
         $form['#info']['update_town'] = $update_town;
