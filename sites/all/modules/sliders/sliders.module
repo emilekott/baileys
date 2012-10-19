@@ -18,7 +18,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
         $view = views_get_page_view();
         $view_name = $view->name;
         if ($view_name == 'holiday_lettings') {
-            
+
             $form['field_sleeps_value']['#title'] = 'Min';
             $form['field_sleeps_value_1']['#title'] = 'Max';
             $form['#info']['filter-field_sleeps_value']['label'] = 'Sleeps';
@@ -57,6 +57,14 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
             );
 
 
+            $form['heading'] = array(
+                '#markup' => '<h2 class="prop-search">Search Properties</h2>',
+            );
+
+            $heading = array(
+                'value' => 'heading',
+            );
+
             $property_type = $form['#info']['filter-field_property_type_tid'];
             $sleeps_min = $form['#info']['filter-field_sleeps_value'];
             $sleeps_max = $form['#info']['filter-field_sleeps_value_1'];
@@ -70,6 +78,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
             unset($form['#info']['filter-field_features_holiday_tid']);
 
             //change order
+            $form['#info']['heading'] = $heading;
             $form['#info']['filter-field_sleeps_value'] = $sleeps_min;
             $form['#info']['filter-field_sleeps_value_1'] = $sleeps_max;
             $form['#info']['update_sleeps'] = $update_sleeps;
@@ -97,7 +106,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
             unset($form['field_town_tid']['#options']['29']); //birdham
             unset($form['field_town_tid']['#options']['30']); //birdham
             unset($form['field_town_tid']['#options']['31']); //chi
-            
+
             return;
         }
 
@@ -163,6 +172,15 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
             'value' => 'update_features',
         );
 
+        $form['heading'] = array(
+            '#markup' => '<h2 class="prop-search">Search Properties</h2>',
+        );
+
+        $heading = array(
+            'value' => 'heading',
+        );
+
+
         /*
          * reset form order...
          * how to sort this is posted here:
@@ -176,8 +194,6 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
         $bedrooms_max = $form['#info']['filter-field_bedrooms_value_1'];
         $features = $form['#info']['filter-field_features_tid'];
         //$created = $form['#info']['filter-created'];
-        
-
         //unset form
         unset($form['#info']['filter-field_property_type_tid']);
         unset($form['#info']['filter-field_price_value']);
@@ -187,10 +203,8 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
         unset($form['#info']['filter-field_bedrooms_value_1']);
         unset($form['#info']['filter-field_features_tid']);
         //unset($form['#info']['filter-created']);
-
-
         //reset form IN THIS ORDER   
-        
+        $form['#info']['heading'] = $heading;
         $form['#info']['filter-field_price_value'] = $budget_min;
         $form['#info']['filter-field_price_value_1'] = $budget_max;
         $form['#info']['update_budget'] = $update_budget;

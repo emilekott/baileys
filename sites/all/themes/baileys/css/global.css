@@ -250,13 +250,13 @@ ul.primary li a:hover {
 
 /*logo*/
 .region-branding-inner{
-    margin: 20px 0;
+    margin: 20px 15px;
 }
 
 
 /*header menus */
 .region-user-first-inner{
-    margin: 20px 5px;
+    margin: 20px 15px 20px 0;
 }
 
 .region-user-first-inner ul.menu{
@@ -422,7 +422,7 @@ nav.navigation ul#main-menu li.active-trail a{
 /*page title and subtitle */
 h1#page-title{
 
-    font-size: 30px;
+    font-size: 25px;
     line-height: 28px;
     font-weight: bold;
 }
@@ -941,10 +941,16 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
     border: 1px solid #cbcbcb;
 }
 
+h2.prop-search{
+    font-size: 20px;
+    color: #721c10;
+    margin-bottom: 5px;
+}
+
 .views-exposed-form label{
     font-weight: normal;
     color: #505050;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .views-exposed-form .form-item label{
@@ -1423,7 +1429,7 @@ ul#view-modes li a:hover {
 
 
 .block-superfish ul#superfish-1{
-    margin: 0;
+    margin: 0 15px;
     padding: 0;
     border-left: 2px solid #f1eee3;
     border-right: 2px solid #f1eee3;
@@ -1450,7 +1456,7 @@ ul#view-modes li a:hover {
     font-weight: bold;    
     line-height: 16px;
     display: inline-block;
-    width: 156px;
+    width: 151px;
     /*padding: 12px 52px;*/
     padding: 12px 0;
     border-right: 2px solid #f1eee3;

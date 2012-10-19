@@ -33,7 +33,7 @@
 <span class="<?php print $flag_wrapper_classes; ?>">
   <?php if ($link_href): ?>
     <?php $count = $flag->get_count($content_id); ?>
-    <a href="<?php print $link_href; ?>" title="<?php print $link_title; ?>" class="<?php print $flag_classes ?>" rel="nofollow"><?php print $link_text; ?><span id="shortlist-count"><?php print $count; ?></span></a>
+    <a href="<?php print $link_href; ?>" title="<?php print $link_title; ?>" class="<?php print $flag_classes ?>" rel="nofollow"><?php print $link_text; ?></a>
   <?php else: ?>
     <span class="<?php print $flag_classes ?>"><?php print $link_text; ?></span>
   <?php endif; ?>
