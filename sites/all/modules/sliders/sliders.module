@@ -102,10 +102,10 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
 
             //remove towns
 
-            unset($form['field_town_tid']['#options']['55']); //almodington
-            unset($form['field_town_tid']['#options']['29']); //birdham
-            unset($form['field_town_tid']['#options']['30']); //birdham
-            unset($form['field_town_tid']['#options']['31']); //chi
+            //unset($form['field_town_tid']['#options']['55']); //almodington
+            //unset($form['field_town_tid']['#options']['29']); //birdham
+            //unset($form['field_town_tid']['#options']['30']); //birdham
+            //unset($form['field_town_tid']['#options']['31']); //chi
 
             return;
         }
