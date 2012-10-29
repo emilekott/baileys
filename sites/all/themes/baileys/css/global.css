@@ -1115,6 +1115,30 @@ input#edit-field-sleeps-value, input#edit-field-sleeps-value-1
     height: 195px;
 }
 
+#status-13{
+    /*baileys red - sale agreed*/
+    color: #721C10;
+}
+#status-6{
+    /*baileys green 0- for sale */
+    color: #054b36;
+}
+#status-14{
+    /*baileys red - sold */
+    color: #721C10;
+}
+
+#let-status-41, #let-status-24{
+    /*available-winter-let*/
+    color: #054b36;
+}
+#let-status-25, #let-status-26{
+    /*let */
+    color: #721C10;
+}
+
+
+
 /*pager */
 .view .item-list{
     margin-bottom: 20px;
