@@ -756,6 +756,10 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
     font-weight: normal;
 }
 
+li.button-map a strong, li.button-map strong{
+    color: #721C10 !important;
+}
+
 .horizontal-tabs fieldset.horizontal-tabs-pane {
     padding: 20px;
     border: 0;

@@ -193,7 +193,7 @@ Drupal.horizontalTab.prototype = {
  */
 Drupal.theme.prototype.horizontalTab = function (settings) {
   var tab = {};
-  tab.item = $('<li class="horizontal-tab-button" tabindex="-1"></li>')
+  tab.item = $('<li class="horizontal-tab-button button-' + settings.title.split(' ').join('').toLowerCase() + '" tabindex="-1"></li>')
     .append(tab.link = $('<a href="#"></a>')
       .append(tab.title = $('<strong></strong>').text(settings.title))
       .append(tab.summary = $('<span class="summary"></span>')
