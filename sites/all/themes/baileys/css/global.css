@@ -1119,7 +1119,7 @@ input#edit-field-sleeps-value, input#edit-field-sleeps-value-1
     /*baileys red - sale agreed*/
     color: #721C10;
 }
-#status-6{
+#status-6, #status-15, #status-11{
     /*baileys green 0- for sale */
     color: #054b36;
 }
