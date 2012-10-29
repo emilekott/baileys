@@ -839,24 +839,28 @@ a.bookmark:hover, ul.bookmarks a.flag:hover{
 
 
 #node-webform-57 #webform-component-first-name,
-#node-webform-57 #webform-component-email-address{
+#node-webform-57 #webform-component-email-address,
+#node-webform-187 #webform-component-first-name,
+#node-webform-187 #webform-component-email-address{
     float:left;
     margin-top:0;
 }
 
 #node-webform-57 #webform-component-last-name,
-#node-webform-57 #webform-component-telephone-number{
+#node-webform-57 #webform-component-telephone-number,
+#node-webform-187 #webform-component-last-name,
+#node-webform-187 #webform-component-telephone-number{
     float:right;
     margin-top:0;
 }
 
-#webform-component-preferred-date{
+#webform-component-preferred-date, #webform-component-holiday-start{
     width: 455px;
     float:left;
     margin-top:0;
 }
 
-#webform-component-preferred-time{
+#webform-component-preferred-time, #webform-component-holiday-end{
     width: 455px;
     float: right;
     margin-top:0;
