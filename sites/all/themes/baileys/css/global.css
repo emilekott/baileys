@@ -976,7 +976,8 @@ h2.prop-search{
 }
 
 form#views-exposed-form-property-search-rentals-page > div,
-form#views-exposed-form-property-search-page > div{
+form#views-exposed-form-property-search-page > div,
+form#views-exposed-form-holiday-lettings-page > div{
     position:relative;
 }
 
