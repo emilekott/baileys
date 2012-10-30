@@ -34,7 +34,10 @@ function gmap_link_content() {
         if ($location) {
             $map_link = gmap_link_gb_google($location);
         }
-        $html = l(t('Full Size Map / Directions'), $map_link, array('attributes' => array('target' => '_blank', 'class' => 'map-link')));
+        //$html = l(t('Full Size Map / Directions'), $map_link, array('attributes' => array('target' => '_blank', 'class' => 'map-link')));
+        if ($map_link){
+            $html = '<span class="map-link">View Larger Map</span>';
+        }
     }
     return $html;
 }
@@ -54,4 +57,12 @@ function gmap_link_gb_google($location = array()) {
     } else {
         return NULL;
     }
+}
+
+function gmap_link_node_view($node, $view_mode, $langcode) {
+    if (($node->type == 'property_sale') || ($node->type == 'property_let') || ($node->type == 'holiday_let')) {
+        drupal_add_js(drupal_get_path('module', 'gmap_link') . '/gmap-link.js');
+    }
+
+    
 }
