@@ -15,14 +15,16 @@
                 $('#edit-update-town-wrapper').show();
             });
            
+           
             //text fields - budget
+            /*
             $('#edit-field-sleeps-value').focus(function(){
                 $('#edit-update-sleeps-wrapper').show(); 
             });
             $('#edit-field-sleeps-value-1').focus(function(){
                 $('#edit-update-sleeps-wrapper').show(); 
             });
-           
+           */
 
            
             $('.views-exposed-form select').change(function() {

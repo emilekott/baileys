@@ -1019,8 +1019,11 @@ form#views-exposed-form-holiday-lettings-page > div{
 
 
 input#edit-field-price-value, input#edit-field-price-value-1,
+select#edit-field-price-value, select#edit-field-price-value-1,
 input#edit-field-bedrooms-value, input#edit-field-bedrooms-value-1,
-input#edit-field-sleeps-value, input#edit-field-sleeps-value-1
+select#edit-field-bedrooms-value, select#edit-field-bedrooms-value-1,
+input#edit-field-sleeps-value, input#edit-field-sleeps-value-1,
+select#edit-field-sleeps-value, select#edit-field-sleeps-value-1
 {
     width: 105px;
 }

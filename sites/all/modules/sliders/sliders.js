@@ -33,21 +33,25 @@
            });
            
            //text fields - budget
+           /*
            $('#edit-field-price-value').focus(function(){
               $('#edit-update-budget-wrapper').show(); 
            });
            $('#edit-field-price-value-1').focus(function(){
               $('#edit-update-budget-wrapper').show(); 
            });
+           */
+           
            
            //text fields - bedrooms
+           /*
            $('#edit-field-bedrooms-value').focus(function(){
               $('#edit-update-bedrooms-wrapper').show(); 
            });
            $('#edit-field-bedrooms-value-1').focus(function(){
               $('#edit-update-bedrooms-wrapper').show(); 
            });
-           
+           */
            
         }
     }
