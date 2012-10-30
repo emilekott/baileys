@@ -1294,6 +1294,10 @@ ul#view-modes li a:hover {
 
 
 /*featured slideshow */
+.click-nav{
+    cursor: pointer;
+}
+
 .page-property-for-sale .region-preface-first .region-inner,
 .page-property-to-let .region-preface-first .region-inner,
 .page-holiday-lettings .region-preface-first .region-inner{
