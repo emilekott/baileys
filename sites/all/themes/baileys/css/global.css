@@ -206,12 +206,13 @@ div.messages p{
 
 
 
+
 ul.primary {
     border:none;
     height: auto;
     line-height: normal;
     list-style: none;
-    margin: 0;
+    margin: 0 0 15px 0;
     padding: 0;
     white-space: nowrap;
 }
