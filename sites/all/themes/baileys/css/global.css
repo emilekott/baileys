@@ -843,6 +843,11 @@ li.button-map a strong, li.button-map strong{
 }
 
 
+#webform-component-newsletter-register--mailchimp-signup{
+    float:right;
+    margin-top: 0;
+}
+
 
 /*arrange viewing */
 .block-property-reference{
