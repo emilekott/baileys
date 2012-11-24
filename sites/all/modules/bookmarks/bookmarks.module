@@ -43,16 +43,16 @@ function bookmarks_content() {
         if ($node->type != 'holiday_let') {
             $html .= "<li>$viewing</li>";
         } else {
-            /*
+            
             $book = field_get_items('node', $node, 'field_supercontrol_id');
             if ($book) {
                 $first_book = reset($book);
                 $book_value = $first_book['value'];
                 $sc_link = '<a class="bookmark" href="https://secure.supercontrol.co.uk/availability/availability_weekly.asp?ownerID=1613&cottageID=cottageID_'.$book_value.'&siteID=11439">View Availability</a>';
                 $html .= "<li>$sc_link</li>";
-            }*/
+            }/*
             $avail_form = l(t('Request Availability'), 'request-availability', array('query' => array('prop' => $nodeid, 'destination' => 'node/' . $nodeid), 'attributes' => array('class' => 'bookmark')));
-            $html .= "<li>$avail_form</li>";
+            $html .= "<li>$avail_form</li>"; */
         }
         $html .= '<li>' . $shortlist . '</li>';
         $html .= '<li><a class="bookmark" onclick="window.print()" href="#">Print</a></li>';
