@@ -1567,3 +1567,17 @@ li.menuparent{
 }
 
 
+/*holiday search block on holidays page */
+.context-holiday-lettings .block-block-4{
+    margin: 0 0 10px 0;
+}
+
+.context-holiday-lettings .block-block-4 h2.block-title{
+    font-size: 20px;
+color: #721c10;
+margin-bottom: 5px;
+}
+
+.context-holiday-lettings .block-block-4 iframe{
+    overflow: hidden;
+}
