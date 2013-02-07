@@ -64,7 +64,6 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
             $heading = array(
                 'value' => 'heading',
             );
-
             $property_type = $form['#info']['filter-field_property_type_tid'];
             $sleeps_min = $form['#info']['filter-field_sleeps_value'];
             $sleeps_max = $form['#info']['filter-field_sleeps_value_1'];
@@ -88,6 +87,8 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
             $form['#info']['update_town'] = $update_town;
             $form['#info']['filter-field_features_holiday_tid'] = $features;
             $form['#info']['update_features'] = $update_features;
+            
+            
 
 
             $form['items_per_page']['#options']['9'] = "Items per page: 9";
@@ -143,6 +144,13 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
         $form['distance']['postal_code']['#title'] = 'Post Code';
 
         $form['created']['#options']['All'] = '- Anytime -';
+        
+        //$form['term_node_tid_depth']['#default_value'] = 24; //set "available" as defualt"
+        
+        $form['term_node_tid_depth']['#options']['25'] = "Show Let Only";
+        $form['term_node_tid_depth']['#options']['24'] = "Show Available Only";
+        
+       // print_r($form['term_node_tid_depth']);
 
         //build some update buttons
         $form['update_budget'] = array(
@@ -191,6 +199,8 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
          * how to sort this is posted here:
          * http://snyderp.tumblr.com/post/12048300955/drupal-bits-programmatically-editing-and-reordering
          */
+        
+        $status = $form['#info']['filter-term_node_tid_depth'];
         $property_type = $form['#info']['filter-field_property_type_tid'];
         $budget_min = $form['#info']['filter-field_price_value'];
         $budget_max = $form['#info']['filter-field_price_value_1'];
@@ -200,6 +210,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
         $features = $form['#info']['filter-field_features_tid'];
         //$created = $form['#info']['filter-created'];
         //unset form
+        unset($form['#info']['filter-term_node_tid_depth']);
         unset($form['#info']['filter-field_property_type_tid']);
         unset($form['#info']['filter-field_price_value']);
         unset($form['#info']['filter-field_price_value_1']);
@@ -208,8 +219,10 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
         unset($form['#info']['filter-field_bedrooms_value_1']);
         unset($form['#info']['filter-field_features_tid']);
         //unset($form['#info']['filter-created']);
-        //reset form IN THIS ORDER   
+        //reset form IN THIS ORDER 
+        
         $form['#info']['heading'] = $heading;
+        $form['#info']['filter-term_node_tid_depth'] = $status;
         $form['#info']['filter-field_price_value'] = $budget_min;
         $form['#info']['filter-field_price_value_1'] = $budget_max;
         $form['#info']['update_budget'] = $update_budget;
@@ -223,7 +236,7 @@ function sliders_form_alter(&$form, &$form_state, $form_id) {
 
         $form['#info']['filter-field_features_tid'] = $features;
         $form['#info']['update_features'] = $update_features;
-
+        //print_r($form['#info']);
 
 
         $form['new_reset'] = array(
