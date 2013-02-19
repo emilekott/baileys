@@ -1581,3 +1581,9 @@ margin-bottom: 5px;
 .context-holiday-lettings .block-block-4 iframe{
     overflow: hidden;
 }
+
+/*holiday lettings link */
+.field-name-field-holiday-lettings-link {
+    text-align: right;
+    margin-bottom: 20px;
+}
